@@ -109,7 +109,7 @@ export default function ProcessSection() {
                           src={item.image}
                           alt={item.title}
                           fill
-                          className="object-cover object-[center_25%] transition-transform duration-700 group-hover:scale-105"
+                          className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
                           sizes="(max-width: 768px) 100vw, 400px"
                         />
                         <div className="absolute inset-0 bg-brand-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
