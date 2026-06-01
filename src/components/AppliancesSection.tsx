@@ -17,7 +17,7 @@ export default function AppliancesSection() {
     {
       title: "Mắc cài phân đoạn",
       image: "/images/appliances/appliance_mac_cai_phan_doan.png",
-      highlighted: true,
+      highlighted: false,
       badge: "Mắc cài phân đoạn",
     },
     {
