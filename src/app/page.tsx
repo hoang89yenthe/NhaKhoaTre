@@ -8,6 +8,7 @@ import AppliancesSection from "@/components/AppliancesSection";
 import Testimonials from "@/components/Testimonials";
 import ConsultationForm from "@/components/ConsultationForm";
 import Footer from "@/components/Footer";
+import ZaloButton from "@/components/ZaloButton";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <ConsultationForm />
       </main>
       <Footer />
+      <ZaloButton />
     </>
   );
 }

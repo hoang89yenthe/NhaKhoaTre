@@ -44,7 +44,7 @@ export default function AppliancesSection() {
         </AnimateIn>
 
         {/* 4 Methods - Circular Badges */}
-        <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-12 mb-16 place-items-center">
           {methods.map((item, idx) => (
             <AnimateIn key={idx} animation="scale-up" delay={idx * 100} className="flex flex-col items-center text-center transition-transform duration-300 hover:scale-110 hover:z-10">
               <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-full flex items-center justify-center overflow-hidden bg-white border border-green-800/10 shadow-sm transition-all duration-300 hover:border-4 hover:border-brand-primary hover:shadow-lg hover:ring-4 hover:ring-brand-primary/10">

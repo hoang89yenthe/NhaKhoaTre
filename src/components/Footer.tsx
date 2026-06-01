@@ -76,7 +76,7 @@ export default function Footer() {
                 <span className="text-xs font-semibold text-green-200/70 block">Hỗ trợ khách hàng</span>
                 <a
                   href="mailto:cskh.nhakhoatre@gmail.com"
-                  className="flex items-center justify-end gap-2 hover:text-brand-accent transition-colors font-semibold"
+                  className="flex items-center gap-2 md:justify-end hover:text-brand-accent transition-colors font-semibold"
                 >
                   <Mail className="h-4 w-4 text-brand-accent" />
                   <span>cskh.nhakhoatre@gmail.com</span>
@@ -87,7 +87,7 @@ export default function Footer() {
                 <span className="text-xs font-semibold text-green-200/70 block">Hotline</span>
                 <a
                   href="tel:0901334334"
-                  className="flex items-center justify-end gap-2 font-bold text-base hover:text-brand-accent transition-colors"
+                  className="flex items-center gap-2 md:justify-end font-bold text-base hover:text-brand-accent transition-colors"
                 >
                   <Phone className="h-[18px] w-[18px] text-brand-accent" />
                   <span>0901.334.334</span>
