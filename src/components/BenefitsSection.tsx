@@ -51,7 +51,7 @@ export default function BenefitsSection() {
                 delay={idx * 80}
                 className={`flex flex-col ${colSpanClass}`}
               >
-                <Card className={`border border-brand-primary/5 bg-white text-brand-dark shadow-md hover:shadow-xl hover:-translate-y-1.5 hover:border-brand-primary/15 transition-all duration-500 rounded-3xl overflow-hidden flex flex-col h-full ${
+                <Card className={`border border-brand-primary/5 bg-white text-brand-dark shadow-md hover:shadow-xl hover:-translate-y-1.5 hover:border-brand-primary/15 transition-all duration-500 rounded-3xl overflow-hidden flex flex-col h-full py-0 gap-0 ${
                   isWide ? "lg:flex-row" : ""
                 }`}>
                   {/* Image */}
