@@ -100,7 +100,7 @@ export default function AppliancesSection() {
               </h4>
               <ul className="space-y-3">
                 {cons.map((con, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-gray-600 leading-relaxed">
+                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 leading-relaxed">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#E5A93C] shrink-0"></span>
                     <span>{con}</span>
                   </li>

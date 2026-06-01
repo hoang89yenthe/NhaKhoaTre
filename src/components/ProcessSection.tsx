@@ -68,11 +68,11 @@ export default function ProcessSection() {
                         {idx + 1}
                       </span>
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold leading-relaxed font-serif">
+                    <h3 className="text-xl sm:text-2xl font-bold leading-relaxed font-serif">
                       {item.title}
                     </h3>
                     {item.details && (
-                      <ul className="mt-3 space-y-1.5 text-xs sm:text-sm text-green-100/90 leading-relaxed">
+                      <ul className="mt-3 space-y-1.5 text-sm text-green-100/90 leading-relaxed">
                         {item.details.map((detail, dIdx) => (
                           <li key={dIdx} className="flex items-start gap-2.5">
                             <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-accent"></span>
@@ -82,7 +82,7 @@ export default function ProcessSection() {
                       </ul>
                     )}
                     {item.desc && (
-                      <p className="mt-3 text-xs sm:text-sm text-green-100/90 leading-relaxed">
+                      <p className="mt-3 text-sm text-green-100/90 leading-relaxed">
                         {item.desc}
                       </p>
                     )}

@@ -66,10 +66,10 @@ export default function BenefitsSection() {
                         Lý do {idx + 1}
                       </span>
                     </div>
-                    <h3 className="text-lg font-bold leading-snug mt-3 text-brand-primary font-serif">
+                    <h3 className="text-xl font-bold leading-snug mt-3 text-brand-primary font-serif">
                       {item.title}
                     </h3>
-                    <p className="mt-3 text-xs sm:text-sm text-gray-500 leading-relaxed">
+                    <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>

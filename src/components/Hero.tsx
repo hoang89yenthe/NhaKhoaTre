@@ -101,7 +101,7 @@ export default function Hero() {
                     <span className="text-sm font-black text-brand-primary leading-tight font-serif">
                       {item.value}
                     </span>
-                    <span className="text-xs text-gray-500 mt-0.5 leading-snug">
+                    <span className="text-sm text-gray-500 mt-0.5 leading-snug">
                       {item.desc}
                     </span>
                   </div>

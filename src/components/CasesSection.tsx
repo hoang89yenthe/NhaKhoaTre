@@ -68,10 +68,10 @@ export default function CasesSection() {
                 </div>
                 {/* Content box */}
                 <CardContent className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg font-bold text-brand-dark group-hover:text-brand-primary transition-colors font-serif">
+                  <h3 className="text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors font-serif">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-xs sm:text-sm text-gray-500 leading-relaxed flex-grow">
+                  <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed flex-grow">
                     {item.desc}
                   </p>
                 </CardContent>
