@@ -55,7 +55,7 @@ export default function CasesSection() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {cases.map((item, idx) => (
             <AnimateIn key={idx} animation="slide-up" delay={idx * 100} className="flex flex-col h-full">
-              <Card className="border border-brand-primary/5 bg-white hover:border-brand-primary/15 shadow-md hover:shadow-xl transition-all duration-500 rounded-3xl overflow-hidden group flex flex-col h-full hover:-translate-y-2">
+              <Card className="border border-brand-primary/5 bg-white hover:border-brand-primary/15 shadow-md hover:shadow-xl transition-all duration-500 rounded-3xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 py-0 gap-0">
                 {/* Image box */}
                 <div className="relative h-48 w-full overflow-hidden flex items-center justify-center border-b border-brand-primary/5 bg-brand-bg-light/30">
                   <Image
