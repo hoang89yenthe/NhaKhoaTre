@@ -56,10 +56,10 @@ export default function AppliancesSection() {
               className="flex flex-col items-center text-center transition-transform duration-300 hover:scale-110 hover:z-10"
             >
               <div
-                className={`relative rounded-full flex items-center justify-center overflow-hidden bg-white ${
+                className={`relative rounded-full flex items-center justify-center overflow-hidden bg-white transition-all duration-300 ${
                   item.highlighted
                     ? "h-36 w-36 md:h-44 md:w-44 border-4 border-brand-primary shadow-lg ring-4 ring-brand-primary/10"
-                    : "h-24 w-24 md:h-28 md:w-28 border border-green-800/10 shadow-sm transition-all duration-300"
+                    : "h-24 w-24 md:h-28 md:w-28 border-2 border-green-800/10 shadow-sm hover:border-4 hover:border-brand-primary hover:shadow-lg hover:ring-4 hover:ring-brand-primary/10"
                 }`}
               >
                 <Image
