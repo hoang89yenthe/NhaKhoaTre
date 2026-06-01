@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
+import AnimateIn from "@/components/AnimateIn";
 
 export default function CasesSection() {
   const cases = [
@@ -39,54 +38,54 @@ export default function CasesSection() {
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <AnimateIn className="text-center max-w-4xl mx-auto mb-12">
           <span className="font-script text-3xl sm:text-4xl text-brand-primary-light font-bold block mb-1">
             Những trường hợp
           </span>
           <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
             NÊN CHỈNH NHA SỚM
           </h2>
+          <div className="mx-auto mt-4 h-1 w-20 rounded bg-brand-accent"></div>
           <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
             Việc kiểm tra nha khoa định kỳ mỗi 6 tháng không chỉ giúp vệ sinh răng miệng mà còn hỗ trợ phát hiện sớm các vấn đề nhờ sử dụng hình ảnh phim chụp. Những vấn đề này có thể bao gồm tình trạng thiếu mầm răng vĩnh viễn, răng mọc ngầm, hoặc mầm răng vĩnh viễn mọc sai vị trí.
           </p>
-        </div>
+        </AnimateIn>
 
         {/* 4 Cards Grid */}
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {cases.map((item, idx) => (
-            <Card
-              key={idx}
-              className="border border-green-800/10 bg-white shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden group flex flex-col h-full"
-            >
-              {/* Image box */}
-              <div className="relative h-48 w-full overflow-hidden flex items-center justify-center border-b border-green-800/5">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 1280px) 100vw, 250px"
-                />
-              </div>
-              {/* Content box */}
-              <CardContent className="p-6 flex flex-col flex-grow">
-                <h3 className="text-lg font-bold text-brand-dark group-hover:text-brand-primary transition-colors font-serif">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-xs sm:text-sm text-gray-500 leading-relaxed flex-grow">
-                  {item.desc}
-                </p>
-              </CardContent>
-            </Card>
+            <AnimateIn key={idx} animation="slide-up" delay={idx * 100} className="flex flex-col h-full">
+              <Card className="border border-green-800/10 bg-white shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden group flex flex-col h-full hover:-translate-y-1">
+                {/* Image box */}
+                <div className="relative h-48 w-full overflow-hidden flex items-center justify-center border-b border-green-800/5">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    sizes="(max-width: 1280px) 100vw, 250px"
+                  />
+                </div>
+                {/* Content box */}
+                <CardContent className="p-6 flex flex-col flex-grow">
+                  <h3 className="text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors font-serif">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed flex-grow">
+                    {item.desc}
+                  </p>
+                </CardContent>
+              </Card>
+            </AnimateIn>
           ))}
         </div>
 
-        {/* Quote Banner Box - Clean Centered Text matching PDF */}
-        <div className="mt-16 max-w-4xl mx-auto text-center px-4">
+        {/* Quote Banner */}
+        <AnimateIn className="mt-16 max-w-4xl mx-auto text-center px-4" delay={200}>
           <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed italic text-brand-dark">
             Hãy cho con niềng răng sớm vì điều này không những giúp bé thay đổi về mặt thẩm mỹ, hỗ trợ con ăn nhai khỏe, giúp hệ tiêu hóa làm việc ổn định. Đặc biệt còn giúp bé lấy được sự tự tin và dễ dàng nắm bắt những cơ hội mới trong cuộc sống.
           </p>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );

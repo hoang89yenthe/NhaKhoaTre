@@ -12,7 +12,9 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
+
+const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ?? "";
 
 export default function ConsultationForm() {
   const [formData, setFormData] = React.useState({
@@ -21,25 +23,53 @@ export default function ConsultationForm() {
     status: "",
     desire: "",
   });
+  const [errors, setErrors] = React.useState({ fullName: "", phone: "" });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const validate = () => {
+    const newErrors = { fullName: "", phone: "" };
+    if (!formData.fullName.trim()) newErrors.fullName = "Vui lòng nhập họ tên";
+    if (!formData.phone.trim()) newErrors.phone = "Vui lòng nhập số điện thoại";
+    setErrors(newErrors);
+    return !newErrors.fullName && !newErrors.phone;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.fullName || !formData.phone) {
-      alert("Vui lòng điền Họ tên và Số điện thoại!");
-      return;
+    if (!validate()) return;
+
+    setIsSubmitting(true);
+    try {
+      if (APPS_SCRIPT_URL) {
+        await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({
+            fullName: formData.fullName,
+            phone: formData.phone,
+            status: formData.status,
+            desire: formData.desire,
+          }),
+        });
+      }
+    } catch {
+      // no-cors luôn trả về opaque response, lỗi mạng thật sự mới vào đây
+    } finally {
+      setIsSubmitting(false);
+      setShowSuccess(true);
     }
-    // Simulate API call
-    setShowSuccess(true);
   };
 
   const handleClose = () => {
     setShowSuccess(false);
     setFormData({ fullName: "", phone: "", status: "", desire: "" });
+    setErrors({ fullName: "", phone: "" });
   };
 
   return (
-    <section id="register" className="bg-brand-bg-light py-20 lg:py-28 relative">
+    <section id="register" className="bg-brand-bg-light pt-20 pb-36 lg:pt-28 relative">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <Card className="border border-green-800/10 bg-brand-form-bg text-white shadow-2xl rounded-3xl overflow-hidden">
           <CardContent className="p-8 sm:p-12">
@@ -60,11 +90,16 @@ export default function ConsultationForm() {
                   id="fullName"
                   type="text"
                   placeholder="VD: Trần Văn A"
-                  required
                   value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                  onChange={(e) => {
+                    setFormData({ ...formData, fullName: e.target.value });
+                    if (errors.fullName) setErrors({ ...errors, fullName: "" });
+                  }}
                   className="bg-white text-brand-dark border-none rounded-xl h-11 px-4 text-center shadow-sm placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-brand-accent"
                 />
+                {errors.fullName && (
+                  <p className="text-xs text-red-200 font-semibold">{errors.fullName}</p>
+                )}
               </div>
 
               <div className="space-y-1.5 text-center">
@@ -75,11 +110,16 @@ export default function ConsultationForm() {
                   id="phone"
                   type="tel"
                   placeholder="VD: 035xxxxxxxx"
-                  required
                   value={formData.phone}
-                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  onChange={(e) => {
+                    setFormData({ ...formData, phone: e.target.value });
+                    if (errors.phone) setErrors({ ...errors, phone: "" });
+                  }}
                   className="bg-white text-brand-dark border-none rounded-xl h-11 px-4 text-center shadow-sm placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-brand-accent"
                 />
+                {errors.phone && (
+                  <p className="text-xs text-red-200 font-semibold">{errors.phone}</p>
+                )}
               </div>
 
               <div className="space-y-1.5 text-center">
@@ -88,7 +128,7 @@ export default function ConsultationForm() {
                 </label>
                 <Textarea
                   id="status"
-                  placeholder="VD: Đau mỏi vai gáy, lệch khớp cắn,......"
+                  placeholder="VD: Răng hô, móm, mọc lộn xộn,..."
                   value={formData.status}
                   onChange={(e) => setFormData({ ...formData, status: e.target.value })}
                   className="bg-white text-brand-dark border-none rounded-xl min-h-[70px] p-3 text-center shadow-sm placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-brand-accent resize-none"
@@ -97,11 +137,11 @@ export default function ConsultationForm() {
 
               <div className="space-y-1.5 text-center">
                 <label htmlFor="desire" className="text-sm font-bold tracking-wide text-white block">
-                  Mong muốn của KH
+                  Mong muốn của bạn
                 </label>
                 <Textarea
                   id="desire"
-                  placeholder="VD: Giảm thiểu tình trạng đau mỏi, ...."
+                  placeholder="VD: Muốn răng đều, đẹp và tự tin hơn khi cười,..."
                   value={formData.desire}
                   onChange={(e) => setFormData({ ...formData, desire: e.target.value })}
                   className="bg-white text-brand-dark border-none rounded-xl min-h-[70px] p-3 text-center shadow-sm placeholder:text-gray-400 focus-visible:ring-2 focus-visible:ring-brand-accent resize-none"
@@ -112,14 +152,38 @@ export default function ConsultationForm() {
               <div className="pt-4 flex justify-center">
                 <Button
                   type="submit"
-                  className="w-full sm:w-auto px-16 py-6 rounded-full bg-brand-dark hover:bg-brand-dark/90 text-brand-accent font-black text-xl sm:text-2xl shadow-lg border-2 border-brand-primary transition-all hover:scale-[1.03] uppercase tracking-wider h-14 flex items-center justify-center"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto px-16 py-6 rounded-full bg-brand-dark hover:bg-brand-dark/90 text-brand-accent font-black text-xl sm:text-2xl shadow-lg border-2 border-brand-primary transition-all hover:scale-[1.03] uppercase tracking-wider h-14 flex items-center justify-center anim-pulse-ring disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  ĐĂNG KÝ NGAY!
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Đang gửi...
+                    </>
+                  ) : (
+                    "ĐĂNG KÝ NGAY!"
+                  )}
                 </Button>
               </div>
             </form>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Wave transition → dark footer below */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+        <svg
+          className="block w-full"
+          style={{ height: "64px" }}
+          viewBox="0 0 1440 64"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,64 L0,32 C240,0 480,64 720,32 C960,0 1200,64 1440,32 L1440,64 Z"
+            fill="#073E23"
+          />
+        </svg>
       </div>
 
       {/* Success Dialog */}

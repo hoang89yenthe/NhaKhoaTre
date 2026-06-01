@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Mail, Phone, MapPin } from "lucide-react";
@@ -91,7 +89,7 @@ export default function Footer() {
                   href="tel:0901334334"
                   className="flex items-center justify-end gap-2 font-bold text-base hover:text-brand-accent transition-colors"
                 >
-                  <Phone className="h-4.5 w-4.5 text-brand-accent" />
+                  <Phone className="h-[18px] w-[18px] text-brand-accent" />
                   <span>0901.334.334</span>
                 </a>
               </div>

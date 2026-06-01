@@ -1,7 +1,6 @@
-"use client";
-
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
+import AnimateIn from "@/components/AnimateIn";
 
 export default function BenefitsSection() {
   const benefits = [
@@ -28,51 +27,55 @@ export default function BenefitsSection() {
   ];
 
   return (
-    <section className="bg-white py-16 relative overflow-hidden">
+    <section className="bg-brand-bg-light py-16 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <AnimateIn className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif mt-2">
             LÝ DO NÊN CHỈNH NHA SỚM CHO BÉ
           </h2>
           <div className="mx-auto mt-4 h-1 w-20 rounded bg-brand-accent"></div>
-        </div>
+        </AnimateIn>
 
         {/* 2x2 Grid */}
         <div className="grid gap-8 lg:grid-cols-2">
           {benefits.map((item, idx) => (
-            <Card
+            <AnimateIn
               key={idx}
-              className="border border-green-800/10 bg-white text-brand-dark shadow-md rounded-3xl overflow-hidden hover:shadow-lg hover:scale-[1.01] transition-all duration-300 flex flex-col"
+              animation={idx % 2 === 0 ? "slide-left" : "slide-right"}
+              delay={idx < 2 ? 0 : 100}
+              className="flex flex-col"
             >
-              {/* Image side top */}
-              <div className="relative h-56 w-full shrink-0 bg-white border-b border-green-800/5 overflow-hidden">
-                <Image
-                  src={item.image}
-                  alt={item.title}
-                  fill
-                  className="object-cover transition-transform duration-700 hover:scale-105"
-                  sizes="(max-width: 1280px) 100vw, 400px"
-                />
-              </div>
-
-              {/* Text content below */}
-              <CardContent className="p-6 flex flex-col justify-between flex-grow">
-                <div>
-                  <div className="flex items-center gap-3">
-                    <span className="text-xs font-black tracking-widest text-brand-primary-light uppercase">
-                      Lý do {idx + 1}
-                    </span>
-                  </div>
-                  <h3 className="text-lg font-bold leading-snug mt-3 text-brand-primary font-serif">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-xs sm:text-sm text-gray-500 leading-relaxed">
-                    {item.desc}
-                  </p>
+              <Card className="border border-green-800/10 bg-white text-brand-dark shadow-md rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/20 transition-all duration-300 flex flex-col h-full">
+                {/* Image */}
+                <div className="relative h-56 w-full shrink-0 bg-white border-b border-green-800/5 overflow-hidden">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 hover:scale-105"
+                    sizes="(max-width: 1280px) 100vw, 400px"
+                  />
                 </div>
-              </CardContent>
-            </Card>
+
+                {/* Text */}
+                <CardContent className="p-6 flex flex-col justify-between flex-grow">
+                  <div>
+                    <div className="flex items-center gap-3">
+                      <span className="text-xs font-black tracking-widest text-brand-primary-light uppercase">
+                        Lý do {idx + 1}
+                      </span>
+                    </div>
+                    <h3 className="text-xl font-bold leading-snug mt-3 text-brand-primary font-serif">
+                      {item.title}
+                    </h3>
+                    <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </AnimateIn>
           ))}
         </div>
       </div>
