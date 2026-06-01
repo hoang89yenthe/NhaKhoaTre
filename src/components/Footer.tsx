@@ -10,13 +10,13 @@ export default function Footer() {
           {/* Brand and licensing */}
           <div className="md:col-span-6 space-y-6">
             <Link href="#" className="flex items-center group">
-              <div className="relative h-11 w-32 md:w-36 transition-transform group-hover:scale-[1.02]">
+              <div className="relative h-14 w-14 transition-transform group-hover:scale-[1.02]">
                 <Image
                   src="/images/logo.png"
                   alt="Nha Khoa Trẻ Logo"
                   fill
                   className="object-contain"
-                  sizes="150px"
+                  sizes="60px"
                 />
               </div>
             </Link>

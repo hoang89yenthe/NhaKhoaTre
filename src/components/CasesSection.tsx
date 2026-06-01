@@ -62,7 +62,7 @@ export default function CasesSection() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
+                    className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.06]"
                     sizes="(max-width: 1280px) 100vw, 250px"
                   />
                 </div>

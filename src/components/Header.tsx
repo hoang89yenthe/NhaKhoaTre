@@ -31,13 +31,13 @@ export default function Header() {
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="#" className="flex items-center group">
-          <div className="relative h-12 w-32 md:w-36 transition-transform duration-300 group-hover:scale-[1.03]">
+          <div className="relative h-14 w-14 md:h-16 md:w-16 transition-transform duration-300 group-hover:scale-[1.03]">
             <Image
               src="/images/logo.png"
               alt="Nha Khoa Trẻ Logo"
               fill
               className="object-contain"
-              sizes="150px"
+              sizes="70px"
               priority
             />
           </div>
