@@ -139,6 +139,17 @@
   html {
     @apply font-sans;
   }
+
+  /* Subtle dot-grid texture overlay — toàn trang */
+  body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(15, 81, 50, 0.12) 1px, transparent 1px);
+    background-size: 22px 22px;
+    pointer-events: none;
+    z-index: 9999;
+  }
 }
 
 @layer components {
