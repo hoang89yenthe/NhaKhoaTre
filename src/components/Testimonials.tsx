@@ -81,7 +81,7 @@ export default function Testimonials() {
               
               <div 
                 ref={containerRef}
-                className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] select-none overflow-hidden rounded-3xl border border-brand-primary/10 shadow-2xl cursor-ew-resize group"
+                className="relative w-full h-[250px] sm:h-[350px] md:h-[400px] select-none overflow-hidden rounded-3xl border border-brand-primary/10 shadow-2xl cursor-ew-resize group touch-none"
                 onMouseMove={handleMouseMove}
                 onMouseDown={() => setIsDragging(true)}
                 onMouseUp={() => setIsDragging(false)}

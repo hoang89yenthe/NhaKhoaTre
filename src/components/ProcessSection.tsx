@@ -64,7 +64,7 @@ export default function ProcessSection() {
                   className="grid grid-cols-1 md:grid-cols-[1fr_56px_1fr] items-center gap-4 md:gap-0"
                 >
                   {/* ── Content card ──────────────────────────────── */}
-                  <div className={isEven ? "md:pr-6" : "md:order-3 md:pl-6"}>
+                  <div className={isEven ? "md:order-1 md:pr-6" : "md:order-3 md:pl-6"}>
                     {/* Mobile: inline badge above card */}
                     <div className="flex md:hidden items-center gap-3 mb-3">
                       <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-accent text-brand-dark text-sm font-black border-2 border-white shadow">
@@ -102,7 +102,7 @@ export default function ProcessSection() {
                   </div>
 
                   {/* ── Image ─────────────────────────────────────── */}
-                  <div className={isEven ? "md:order-3 md:pl-6" : "md:pr-6"}>
+                  <div className={isEven ? "md:order-3 md:pl-6" : "md:order-1 md:pr-6"}>
                     <AnimateIn animation={isEven ? "slide-right" : "slide-left"} delay={120}>
                       <div className="relative h-48 sm:h-56 w-full rounded-3xl overflow-hidden shadow-lg border border-brand-primary/5 group">
                         <Image

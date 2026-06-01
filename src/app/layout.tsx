@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Outfit, Playfair_Display, Caveat } from "next/font/google";
+import { Outfit, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
 const outfit = Outfit({
@@ -12,10 +12,7 @@ const playfair = Playfair_Display({
   variable: "--font-serif",
 });
 
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-script",
-});
+
 
 const BASE_URL = "https://nhakhoatre.vn"; // TODO: cập nhật khi có domain thực tế
 
@@ -115,13 +112,24 @@ export default function RootLayout({
   return (
     <html
       lang="vi"
-      className={`${outfit.variable} ${playfair.variable} ${caveat.variable} h-full antialiased`}
+      className={`${outfit.variable} ${playfair.variable} h-full antialiased`}
     >
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        <noscript>
+          <style>{`
+            .opacity-0 {
+              opacity: 1 !important;
+            }
+            .anim-slide-up, .anim-slide-left, .anim-slide-right, .anim-scale-up {
+              animation: none !important;
+              opacity: 1 !important;
+            }
+          `}</style>
+        </noscript>
       </head>
       <body className="min-h-full flex flex-col font-sans bg-white text-brand-text">
         {children}
