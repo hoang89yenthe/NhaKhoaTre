@@ -96,7 +96,7 @@ export default function Testimonials() {
                   style={{
                     backgroundImage: "url('/images/customer_before_after.png')",
                     backgroundSize: "200% auto",
-                    backgroundPosition: "100% 0%"
+                    backgroundPosition: "100% 30%"
                   }}
                 />
                 <div className="absolute right-4 top-4 bg-brand-primary/80 backdrop-blur-md text-white text-xs font-bold px-3 py-1 rounded-full border border-white/10 z-20 pointer-events-none">
@@ -109,7 +109,7 @@ export default function Testimonials() {
                   style={{
                     backgroundImage: "url('/images/customer_before_after.png')",
                     backgroundSize: "200% auto",
-                    backgroundPosition: "0% 0%",
+                    backgroundPosition: "0% 30%",
                     clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
                   }}
                 />
