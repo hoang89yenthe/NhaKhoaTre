@@ -95,7 +95,7 @@ export default function Testimonials() {
                   className="absolute inset-0 bg-cover bg-no-repeat"
                   style={{
                     backgroundImage: "url('/images/customer_before_after.png')",
-                    backgroundSize: "200% 100%",
+                    backgroundSize: "200% auto",
                     backgroundPosition: "100% 0%"
                   }}
                 />
@@ -108,7 +108,7 @@ export default function Testimonials() {
                   className="absolute inset-0 bg-cover bg-no-repeat border-r-2 border-brand-accent"
                   style={{
                     backgroundImage: "url('/images/customer_before_after.png')",
-                    backgroundSize: "200% 100%",
+                    backgroundSize: "200% auto",
                     backgroundPosition: "0% 0%",
                     clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)`
                   }}
