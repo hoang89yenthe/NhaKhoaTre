@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Award, Users, Cpu } from "lucide-react";
 
 export default function Hero() {
   const bullets = [
@@ -9,27 +10,19 @@ export default function Hero() {
 
   const highlights = [
     {
-      type: "icon",
-      icon: (
-        <svg viewBox="0 0 24 24" className="h-10 w-10 fill-none stroke-brand-primary stroke-[1.8]" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="12" cy="12" r="3" />
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" />
-        </svg>
-      ),
-      title: "CHUYÊN SÂU CHỈNH NHA TRẺ EM",
-      desc: "TIÊU CHUẨN ĐỨC",
+      icon: <Award className="h-7 w-7 text-brand-primary" strokeWidth={1.8} />,
+      value: "Tiêu chuẩn Đức",
+      desc: "Chỉnh nha chuyên sâu trẻ em",
     },
     {
-      type: "text",
-      value: "BÁC SĨ",
-      title: "Giàu kinh nghiệm",
-      desc: "AM HIỂU TRẺ",
+      icon: <Users className="h-7 w-7 text-brand-primary" strokeWidth={1.8} />,
+      value: "Đội ngũ bác sĩ",
+      desc: "Giàu kinh nghiệm, am hiểu trẻ",
     },
     {
-      type: "text",
-      value: "100%",
-      title: "Số hóa",
-      desc: "ỨNG DỤNG CÔNG NGHỆ CAO",
+      icon: <Cpu className="h-7 w-7 text-brand-primary" strokeWidth={1.8} />,
+      value: "100% Số hóa",
+      desc: "Ứng dụng công nghệ cao",
     },
   ];
 
@@ -90,53 +83,37 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Floating Quick Stats */}
+        {/* Floating highlights bar */}
         <div className="relative mt-16 lg:mt-20 anim-slide-up anim-delay-700">
-          <div className="grid gap-6 sm:grid-cols-3 bg-white p-6 sm:p-8 rounded-3xl shadow-xl relative z-20">
-            {highlights.map((item, idx) => (
-              <div
-                key={idx}
-                className="flex flex-col items-center text-center p-4 rounded-2xl transition-all duration-300 hover:bg-brand-bg-light group"
-                style={{ animationDelay: `${800 + idx * 100}ms` }}
-              >
-                {item.type === "icon" ? (
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-bg-light shadow-sm group-hover:bg-white transition-colors mb-3">
+          <div className="bg-white rounded-3xl shadow-xl relative z-30 overflow-hidden">
+            <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-green-800/8">
+              {highlights.map((item, idx) => (
+                <div
+                  key={idx}
+                  className="flex items-center gap-4 px-6 py-5 sm:px-8 sm:py-6 group hover:bg-brand-bg-light transition-colors duration-300"
+                >
+                  {/* Icon badge */}
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-bg-light group-hover:bg-white shadow-sm transition-colors duration-300">
                     {item.icon}
                   </div>
-                ) : (
-                  <span className="text-3xl font-extrabold text-brand-primary mb-2 font-serif">
-                    {item.value}
-                  </span>
-                )}
-                <div className="flex flex-col items-center">
-                  {item.type === "icon" ? (
-                    <>
-                      <span className="text-sm font-bold text-brand-primary leading-tight">
-                        {item.title}
-                      </span>
-                      <span className="text-xs font-black text-brand-primary mt-1 uppercase tracking-wider">
-                        {item.desc}
-                      </span>
-                    </>
-                  ) : (
-                    <>
-                      <span className="text-xs font-semibold text-gray-500 leading-tight">
-                        {item.title}
-                      </span>
-                      <span className="text-xs font-black text-brand-primary mt-1 uppercase tracking-wider">
-                        {item.desc}
-                      </span>
-                    </>
-                  )}
+                  {/* Text */}
+                  <div className="flex flex-col min-w-0">
+                    <span className="text-sm font-black text-brand-primary leading-tight font-serif">
+                      {item.value}
+                    </span>
+                    <span className="text-xs text-gray-500 mt-0.5 leading-snug">
+                      {item.desc}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Wave transition → white sections below */}
-      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-10 pointer-events-none">
         <svg
           className="block w-full"
           style={{ height: "64px" }}
