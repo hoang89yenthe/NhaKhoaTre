@@ -128,7 +128,7 @@ export default function ConsultationForm() {
               <div className="pt-4 flex justify-center">
                 <Button
                   type="submit"
-                  className="w-full sm:w-auto px-16 py-6 rounded-full bg-brand-dark hover:bg-brand-dark/90 text-brand-accent font-black text-xl sm:text-2xl shadow-lg border-2 border-brand-primary transition-all hover:scale-[1.03] uppercase tracking-wider h-14 flex items-center justify-center"
+                  className="w-full sm:w-auto px-16 py-6 rounded-full bg-brand-dark hover:bg-brand-dark/90 text-brand-accent font-black text-xl sm:text-2xl shadow-lg border-2 border-brand-primary transition-all hover:scale-[1.03] uppercase tracking-wider h-14 flex items-center justify-center anim-pulse-ring"
                 >
                   ĐĂNG KÝ NGAY!
                 </Button>

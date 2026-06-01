@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnimateIn from "@/components/AnimateIn";
 
 export default function AppliancesSection() {
   const methods = [
@@ -32,22 +33,20 @@ export default function AppliancesSection() {
     <section id="appliances" className="bg-white py-16 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-4xl mx-auto mb-12">
+        <AnimateIn className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
             CÁC PHƯƠNG TIỆN CHỈNH NHA TRẺ EM
           </h2>
+          <div className="mx-auto mt-4 h-1 w-20 rounded bg-brand-accent"></div>
           <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
             Nha Khoa Trẻ áp dụng đa dạng các phương tiện chỉnh nha hiện đại, phù hợp với từng độ tuổi và tình trạng răng của bé, đảm bảo hiệu quả điều trị tối ưu và thoải mái nhất.
           </p>
-        </div>
+        </AnimateIn>
 
-        {/* 4 Methods - Circular Badges Layout */}
+        {/* 4 Methods - Circular Badges */}
         <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 mb-16">
           {methods.map((item, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center text-center dock-item"
-            >
+            <AnimateIn key={idx} animation="scale-up" delay={idx * 100} className="flex flex-col items-center text-center dock-item">
               <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-full flex items-center justify-center overflow-hidden bg-white border border-green-800/10 shadow-sm hover:h-36 hover:w-36 md:hover:h-44 md:hover:w-44 hover:border-4 hover:border-brand-primary hover:shadow-lg hover:ring-4 hover:ring-brand-primary/10 dock-item-circle">
                 <Image
                   src={item.image}
@@ -60,13 +59,12 @@ export default function AppliancesSection() {
               <h3 className="mt-4 text-sm font-bold text-brand-dark font-serif max-w-[150px]">
                 {item.title}
               </h3>
-            </div>
+            </AnimateIn>
           ))}
         </div>
 
-        {/* Focus Detail: Mắc cài kim loại 3M Mỹ */}
-        <div className="relative mx-auto max-w-4xl bg-white rounded-3xl p-6 md:p-10 border border-green-800/10 shadow-lg flex flex-col items-center">
-          {/* Centered Image */}
+        {/* Focus Detail */}
+        <AnimateIn animation="slide-up" delay={100} className="relative mx-auto max-w-4xl bg-white rounded-3xl p-6 md:p-10 border border-green-800/10 shadow-lg flex flex-col items-center">
           <div className="relative h-60 w-60 sm:h-72 sm:w-72 overflow-hidden bg-white mb-6">
             <Image
               src="/images/appliances/appliance_bracket_detail.png"
@@ -77,14 +75,12 @@ export default function AppliancesSection() {
             />
           </div>
 
-          {/* Centered Title */}
           <h3 className="text-2xl font-black text-brand-primary sm:text-3xl font-serif text-center mb-8">
             MẮC CÀI KIM LOẠI <span className="text-brand-dark">(Mắc cài 3m - Mỹ)</span>
           </h3>
 
-          {/* Two-Column Grid for Pros and Cons */}
           <div className="grid gap-8 md:grid-cols-2 w-full border-t border-green-800/10 pt-8">
-            {/* Pros Column */}
+            {/* Pros */}
             <div className="space-y-4">
               <h4 className="text-sm font-black text-brand-primary uppercase tracking-wider border-b border-green-800/10 pb-1 w-fit">
                 Ưu điểm
@@ -97,7 +93,7 @@ export default function AppliancesSection() {
               </ul>
             </div>
 
-            {/* Cons Column */}
+            {/* Cons */}
             <div className="space-y-4">
               <h4 className="text-sm font-black text-brand-primary uppercase tracking-wider border-b border-green-800/10 pb-1 w-fit">
                 Nhược điểm
@@ -112,7 +108,7 @@ export default function AppliancesSection() {
               </ul>
             </div>
           </div>
-        </div>
+        </AnimateIn>
       </div>
     </section>
   );
