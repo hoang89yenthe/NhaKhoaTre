@@ -17,7 +17,7 @@ export default function AppliancesSection() {
     {
       title: "Mắc cài phân đoạn",
       image: "/images/appliances/appliance_mac_cai_phan_doan.png",
-      highlighted: true,
+      highlighted: false,
       badge: "Mắc cài phân đoạn",
     },
     {
@@ -53,13 +53,13 @@ export default function AppliancesSection() {
           {methods.map((item, idx) => (
             <div
               key={idx}
-              className="flex flex-col items-center text-center transition-all duration-300"
+              className="flex flex-col items-center text-center dock-item"
             >
               <div
-                className={`relative rounded-full flex items-center justify-center overflow-hidden bg-white ${
+                className={`relative rounded-full flex items-center justify-center overflow-hidden bg-white dock-item-circle ${
                   item.highlighted
                     ? "h-36 w-36 md:h-44 md:w-44 border-4 border-brand-primary shadow-lg ring-4 ring-brand-primary/10"
-                    : "h-24 w-24 md:h-28 md:w-28 border border-green-800/10 shadow-sm"
+                    : "h-24 w-24 md:h-28 md:w-28 border border-green-800/10 shadow-sm hover:h-36 hover:w-36 md:hover:h-44 md:hover:w-44 hover:border-4 hover:border-brand-primary hover:shadow-lg hover:ring-4 hover:ring-brand-primary/10"
                 }`}
               >
                 <Image
