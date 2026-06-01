@@ -26,14 +26,14 @@ export default function DoctorsSection() {
             <div className="absolute inset-0 rounded-3xl bg-brand-accent/15 blur-2xl scale-105 pointer-events-none transition-all group-hover:scale-110 duration-700" />
             <div className="absolute inset-0 translate-x-3 translate-y-3 border border-brand-primary/10 rounded-3xl -z-10 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5 duration-500" />
             
-            <AnimateIn animation="scale-up" className="relative overflow-hidden bg-brand-bg-light/30 border border-brand-primary/10 rounded-3xl p-4 shadow-xl">
-              <div className="relative h-[250px] sm:h-[350px] md:h-[400px] w-full overflow-hidden rounded-2xl">
+            <AnimateIn animation="scale-up" className="relative overflow-hidden border border-brand-primary/10 rounded-3xl shadow-xl">
+              <div className="relative h-[280px] sm:h-[380px] md:h-[440px] w-full">
                 <Image
                   src="/images/doctors-team.png"
                   alt="Đội ngũ bác sĩ chuyên môn cao tại Nha Khoa Trẻ"
                   fill
-                  className="object-contain hover:scale-102 transition-transform duration-500"
-                  sizes="(max-width: 1024px) 100vw, 550px"
+                  className="object-cover object-top transition-transform duration-500 hover:scale-105"
+                  sizes="(max-width: 1024px) 100vw, 600px"
                   priority
                 />
               </div>
