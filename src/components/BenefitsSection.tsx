@@ -5,23 +5,23 @@ import AnimateIn from "@/components/AnimateIn";
 export default function BenefitsSection() {
   const benefits = [
     {
-      title: "Phát hiện sớm tình trạng răng miệng và chất lượng xương hàm của trẻ",
-      desc: "Cho bé đi khám sớm cùng bác sĩ chỉnh nha, bé sẽ được chụp phim 3D, qua hình ảnh phim 3D này bác sĩ sẽ chỉ ra những sai lệch ở mầm răng hoặc xương hàm để đưa ra hướng chỉnh phù hợp cho bé mà không thể nhìn được bằng mắt thường.",
+      title: "Phát hiện sớm tình trạng răng miệng và xương hàm",
+      desc: "Phim 3D chụp từ sớm giúp bác sĩ thấy những sai lệch mầm răng, răng mọc ngầm mà mắt thường không nhìn được — đưa ra hướng chỉnh trước khi vấn đề phức tạp hơn.",
       image: "/images/reasons/reason_1.png",
     },
     {
-      title: "Chỉnh nha sớm giúp khắc phục hiệu quả sai lệch",
-      desc: "Điều trị sớm, khi răng sữa vẫn còn, không chỉ giúp quá trình thay răng diễn ra suôn sẻ mà còn hỗ trợ sự phát triển cân đối của xương hàm. Điều này tạo nền tảng cho trẻ có hàm răng đều đẹp và tự tin khi trưởng thành.",
+      title: "Khắc phục sai lệch hiệu quả hơn khi còn nhỏ",
+      desc: "Xương hàm đang phát triển linh hoạt, dễ định hướng. Điều trị từ sớm tạo nền tảng cho hàm răng đều đẹp — thay vì phải can thiệp phẫu thuật khi lớn.",
       image: "/images/reasons/reason_2.png",
     },
     {
-      title: "Niềng răng trẻ em giai đoạn vàng, ít gây đau và hạn chế bệnh răng miệng",
-      desc: "Chỉnh răng trong giai đoạn từ 7 -12 tuổi giúp trẻ sẽ ít khó chịu hơn so với người trưởng thành trong quá trình nắn chỉnh sai lệch. Răng được nắn thẳng từ sớm giúp cải thiện khớp cắn, hỗ trợ ăn nhai tốt hơn, ngăn ngừa các bệnh lý răng miệng và tiêu hóa nhờ việc vệ sinh răng miệng trở nên dễ dàng hơn.",
+      title: "Giai đoạn vàng 7–12 tuổi: ít đau, ít biến chứng",
+      desc: "Trẻ em dễ thích nghi với khí cụ và ít khó chịu hơn người lớn. Răng thẳng sớm còn giúp vệ sinh dễ hơn, giảm nguy cơ sâu răng và bệnh nướu lâu dài.",
       image: "/images/reasons/reason_3.png",
     },
     {
-      title: "Thời gian và chi phí chỉnh nha trẻ em ít tốn kém, tiết kiệm",
-      desc: "Chỉnh nha từ sớm không chỉ đơn giản hóa quá trình điều trị mà còn giảm chi phí và thời gian. Nếu sai lệch nghiêm trọng không được điều trị kịp thời, khi trẻ lớn hơn và xương hàm qua giai đoạn tăng trưởng, việc điều trị có thể phải kết hợp phẫu thuật phức tạp, gây tốn kém.",
+      title: "Tiết kiệm thời gian và chi phí đáng kể",
+      desc: "Điều trị sớm đơn giản hơn, ngắn hơn và rẻ hơn so với chờ xương hàm cứng lại. Can thiệp đúng lúc có thể tránh hoàn toàn việc phải phẫu thuật sau này.",
       image: "/images/reasons/reason_4.png",
     },
   ];
@@ -31,10 +31,9 @@ export default function BenefitsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <AnimateIn className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif mt-2">
-            LÝ DO NÊN CHỈNH NHA SỚM CHO BÉ
+          <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl font-serif mt-2">
+            Lý do nên chỉnh nha sớm cho bé
           </h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded bg-brand-accent"></div>
         </AnimateIn>
 
         {/* Bento Grid (12-column layout) */}

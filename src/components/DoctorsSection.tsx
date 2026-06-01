@@ -10,13 +10,12 @@ export default function DoctorsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <AnimateIn className="text-center max-w-4xl mx-auto mb-16">
-          <span className="text-brand-primary-light font-black uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
-            Đội Ngũ Chuyên Gia
+          <span className="text-brand-primary-light font-semibold uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
+            Đội ngũ chuyên gia
           </span>
-          <h2 className="text-2xl font-black tracking-tight text-brand-primary sm:text-3xl lg:text-4xl font-serif leading-tight">
-            NHA KHOA TRẺ - ĐỊA CHỈ NIỀM TIN CỦA HÀNG NGÀN CHA MẸ
+          <h2 className="text-2xl font-bold tracking-tight text-brand-primary sm:text-3xl lg:text-4xl font-serif leading-tight">
+            Nha Khoa Trẻ — địa chỉ niềm tin của hàng ngàn cha mẹ
           </h2>
-          <div className="mx-auto mt-4 h-1.5 w-16 rounded bg-brand-accent"></div>
         </AnimateIn>
 
         {/* 2 Columns Layout */}
@@ -42,13 +41,18 @@ export default function DoctorsSection() {
           {/* Right: Individual Doctor Highlights */}
           <div className="lg:col-span-6 space-y-6">
             <AnimateIn animation="slide-right" delay={100}>
-              <div className="border border-brand-primary/5 bg-brand-bg-light/45 p-6 rounded-2xl">
-                <h3 className="text-xl sm:text-2xl font-black text-brand-primary font-serif leading-tight">
-                  100% TỐT NGHIỆP ĐẠI HỌC Y HÀ NỘI
-                </h3>
-                <p className="mt-2 text-sm text-gray-500 leading-relaxed font-semibold">
-                  Đội ngũ bác sĩ chính quy chuyên khoa Răng Hàm Mặt, được đào tạo chuyên sâu chỉnh nha trẻ em và ứng dụng công nghệ số toàn diện trong điều trị.
-                </p>
+              <div className="flex items-start gap-5 pb-6 border-b border-brand-primary/8">
+                <span className="text-6xl font-black text-brand-primary font-serif leading-none shrink-0">
+                  100%
+                </span>
+                <div className="pt-1">
+                  <p className="text-base font-semibold text-brand-dark leading-snug">
+                    tốt nghiệp chính quy<br />Đại học Y Hà Nội
+                  </p>
+                  <p className="mt-2 text-sm text-gray-500 leading-relaxed">
+                    Chuyên khoa Răng Hàm Mặt, đào tạo chuyên sâu chỉnh nha trẻ em và ứng dụng công nghệ số toàn diện.
+                  </p>
+                </div>
               </div>
             </AnimateIn>
 
@@ -76,23 +80,19 @@ export default function DoctorsSection() {
                   animation="slide-up"
                   delay={150 + docIdx * 80}
                 >
-                  <div className="border border-brand-primary/5 hover:border-brand-primary/15 bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group flex items-start gap-4">
-                    {/* Circle badge count */}
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-bg-light text-brand-primary font-black border border-brand-primary/10 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                  <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-l-[3px] border-brand-accent hover:border-brand-primary pl-6 group">
+                    <span className="text-xs font-semibold text-brand-accent tracking-widest uppercase">
                       0{docIdx + 1}
-                    </div>
-                    {/* Doctor Info */}
-                    <div className="flex-grow min-w-0">
-                      <h4 className="text-base font-black text-brand-dark font-serif group-hover:text-brand-primary transition-colors">
-                        {doc.name}
-                      </h4>
-                      <p className="text-xs font-bold text-brand-accent mt-0.5 uppercase tracking-wide">
-                        {doc.title}
-                      </p>
-                      <p className="text-sm text-gray-500 mt-2 leading-relaxed">
-                        {doc.desc}
-                      </p>
-                    </div>
+                    </span>
+                    <h4 className="text-base font-semibold text-brand-dark font-serif mt-1 group-hover:text-brand-primary transition-colors">
+                      {doc.name}
+                    </h4>
+                    <p className="text-xs text-brand-primary-light mt-0.5 font-medium tracking-wide">
+                      {doc.title}
+                    </p>
+                    <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+                      {doc.desc}
+                    </p>
                   </div>
                 </AnimateIn>
               ))}

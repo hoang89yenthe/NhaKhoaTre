@@ -5,19 +5,19 @@ export default function ZaloButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Nhắn tin Zalo cho Nha Khoa Trẻ"
-      className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full shadow-xl transition-transform hover:scale-110 active:scale-95"
-      style={{ backgroundColor: "#0068FF" }}
+      className="fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-transform hover:scale-110 active:scale-95"
+      style={{ backgroundColor: "#0052CC" }}
     >
-      {/* Pulse ring */}
+      {/* Subtle pulse ring */}
       <span
-        className="absolute inset-0 rounded-full animate-ping opacity-40"
-        style={{ backgroundColor: "#0068FF" }}
+        className="absolute inset-0 rounded-full animate-pulse opacity-20"
+        style={{ backgroundColor: "#0052CC" }}
       />
 
       {/* Zalo SVG logo */}
       <svg
         viewBox="0 0 24 24"
-        className="relative h-8 w-8 fill-white"
+        className="relative h-6 w-6 fill-white"
         xmlns="http://www.w3.org/2000/svg"
         aria-hidden="true"
       >

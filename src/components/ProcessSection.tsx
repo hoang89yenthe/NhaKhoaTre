@@ -20,14 +20,17 @@ export default function ProcessSection() {
     },
     {
       title: "Lắp khí cụ chỉnh nha phù hợp cho bé",
+      desc: "Bác sĩ lắp khí cụ được chỉ định và hướng dẫn bé cách đeo, vệ sinh đúng cách tại nhà.",
       image: "/images/process/process_3.png",
     },
     {
-      title: "Tái khám định kỳ 2-4 tuần, theo dõi quá trình chỉnh nha của bé",
+      title: "Tái khám định kỳ 2–4 tuần, theo dõi tiến trình",
+      desc: "Mỗi lần tái khám, bác sĩ điều chỉnh lực chỉnh nha và cập nhật tiến trình cho cha mẹ.",
       image: "/images/process/process_4.png",
     },
     {
-      title: "Kết thúc giai đoạn chỉnh nha trẻ em, tái khám duy trì.",
+      title: "Kết thúc liệu trình, lắp hàm duy trì",
+      desc: "Bác sĩ đánh giá kết quả cuối kỳ, lắp hàm duy trì và lên lịch tái khám để giữ kết quả lâu dài.",
       image: "/images/process/process_5.png",
     },
   ];
@@ -37,13 +40,12 @@ export default function ProcessSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         {/* Section Header */}
         <AnimateIn className="text-center max-w-3xl mx-auto mb-20">
-          <span className="text-brand-primary-light font-black uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
-            Liệu Trình Điều Trị
+          <span className="text-brand-primary-light font-semibold uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
+            Liệu trình điều trị
           </span>
-          <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
-            QUY TRÌNH CHỈNH NHA TRẺ EM
+          <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl font-serif">
+            Quy trình chỉnh nha trẻ em
           </h2>
-          <div className="mx-auto mt-4 h-1.5 w-16 rounded bg-brand-accent"></div>
           <p className="mt-6 text-sm sm:text-base text-gray-500 leading-relaxed max-w-2xl mx-auto">
             Quy trình niềng răng cho trẻ em được cá nhân hóa dựa trên độ tuổi và tình trạng răng, tuân thủ các bước chuẩn y khoa tiêu chuẩn Đức:
           </p>

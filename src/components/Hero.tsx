@@ -27,24 +27,19 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="relative overflow-hidden bg-gradient-to-b from-brand-primary to-brand-dark pt-16 pb-36 text-white lg:pt-20">
+    <section id="home" className="relative overflow-hidden bg-gradient-to-br from-[#0D6B3F] via-brand-primary to-brand-dark pt-16 pb-24 sm:pb-36 text-white lg:pt-20">
       {/* Decorative ambient background glows */}
-      <div className="absolute top-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-brand-accent/15 blur-[120px] anim-float pointer-events-none" />
-      <div className="absolute bottom-[-10%] left-[-10%] h-[400px] w-[400px] rounded-full bg-brand-primary-light/20 blur-[100px] anim-float-reverse pointer-events-none" />
-      
-      {/* Sparkles */}
-      <div className="absolute top-24 right-[15%] h-6 w-6 rounded-full bg-brand-accent/30 anim-float anim-delay-200 pointer-events-none" />
-      <div className="absolute top-48 right-[42%] h-4 w-4 rounded-full bg-white/30 anim-float-reverse anim-delay-500 pointer-events-none" />
-      <div className="absolute bottom-32 left-[20%] h-5 w-5 rounded-full bg-brand-accent/20 anim-float anim-delay-700 pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-10%] h-[500px] w-[500px] rounded-full bg-brand-accent/10 blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-10%] h-[400px] w-[400px] rounded-full bg-brand-primary-light/15 blur-[100px] pointer-events-none" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
           {/* Hero Left Content */}
-          <div className="flex flex-col justify-center lg:col-span-7">
-            <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl md:text-5xl lg:text-5xl font-serif leading-tight text-white anim-slide-left anim-delay-100">
-              CHỈNH NHA SỚM CHO BÉ <br />
-              <span className="text-brand-accent block mt-3 drop-shadow-md">
-                ĐÓN TƯƠNG LAI RẠNG NGỜI
+          <div className="flex flex-col justify-center lg:col-span-6 order-2 lg:order-1">
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-6xl font-serif leading-[1.1] text-white anim-slide-left anim-delay-100">
+              Chỉnh nha sớm cho bé <br />
+              <span className="text-brand-accent block mt-3">
+                Đón tương lai rạng ngời
               </span>
             </h1>
 
@@ -68,10 +63,29 @@ export default function Hero() {
                 </div>
               ))}
             </div>
+
+            {/* Primary CTA */}
+            <div className="mt-10 flex flex-wrap gap-4 anim-slide-left anim-delay-700">
+              <a
+                href="#register"
+                className="inline-flex items-center gap-2.5 rounded-full bg-brand-accent px-8 py-3.5 text-base font-bold text-brand-dark hover:bg-brand-accent-light transition-colors duration-200 shadow-lg animate-shimmer-btn"
+              >
+                Đặt lịch tư vấn miễn phí
+                <svg viewBox="0 0 24 24" className="h-4 w-4 fill-none stroke-current stroke-2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+              <a
+                href="tel:0901334334"
+                className="inline-flex items-center gap-2.5 rounded-full border border-white/30 px-7 py-3.5 text-base font-semibold text-white hover:bg-white/10 transition-colors duration-200"
+              >
+                0901.334.334
+              </a>
+            </div>
           </div>
 
-          {/* Hero Right Image - Artistic asymmetrical double frame */}
-          <div className="relative lg:col-span-5 flex justify-center anim-slide-right anim-delay-300 items-center px-4 group">
+          {/* Hero Right Image */}
+          <div className="relative lg:col-span-6 flex justify-center anim-slide-right anim-delay-300 items-center px-4 group order-1 lg:order-2">
             {/* Ambient glow behind the image */}
             <div className="absolute inset-0 rounded-[60px_120px_60px_120px] bg-brand-accent/20 blur-3xl scale-110 pointer-events-none transition-all group-hover:scale-120 duration-700" />
             
@@ -79,7 +93,7 @@ export default function Hero() {
             <div className="absolute inset-0 translate-x-4 translate-y-4 border-2 border-brand-accent/30 rounded-[60px_120px_60px_120px] scale-100 -z-10 transition-transform group-hover:translate-x-2 group-hover:translate-y-2 duration-500 w-[calc(100%-32px)] mx-auto" />
             
             {/* Inner Image Container */}
-            <div className="relative w-full max-w-[430px] aspect-square overflow-hidden rounded-[60px_120px_60px_120px] border-2 border-white/20 shadow-2xl transition-all duration-700 group-hover:border-brand-accent/40">
+            <div className="relative w-full max-w-[340px] sm:max-w-[420px] lg:max-w-[500px] aspect-square overflow-hidden rounded-[60px_120px_60px_120px] border-2 border-white/20 shadow-2xl transition-all duration-700 group-hover:border-brand-accent/40">
               <Image
                 src="/images/hero-dentist.png"
                 alt="Bác sĩ khám răng cho bé tại Nha Khoa Trẻ"

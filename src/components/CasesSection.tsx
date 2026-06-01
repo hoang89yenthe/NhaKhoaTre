@@ -39,25 +39,24 @@ export default function CasesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <AnimateIn className="text-center max-w-4xl mx-auto mb-16">
-          <span className="text-brand-primary-light font-black uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
-            Chỉ Định Nha Khoa
+          <span className="text-brand-primary-light font-semibold uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
+            Chỉ định nha khoa
           </span>
-          <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
-            NÊN CHỈNH NHA SỚM
+          <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl font-serif">
+            Nên chỉnh nha sớm khi nào?
           </h2>
-          <div className="mx-auto mt-4 h-1.5 w-16 rounded bg-brand-accent"></div>
-          <p className="mt-6 text-sm sm:text-base text-gray-500 leading-relaxed max-w-3xl mx-auto">
-            Việc kiểm tra nha khoa định kỳ mỗi 6 tháng không chỉ giúp vệ sinh răng miệng mà còn hỗ trợ phát hiện sớm các vấn đề nhờ sử dụng hình ảnh phim chụp. Những vấn đề này có thể bao gồm tình trạng thiếu mầm răng vĩnh viễn, răng mọc ngầm, hoặc mầm răng vĩnh viễn mọc sai vị trí.
+          <p className="mt-5 text-base text-gray-500 leading-relaxed max-w-xl mx-auto">
+            Nhận biết sớm giúp bé điều trị đơn giản hơn, ít đau hơn và tiết kiệm hơn về lâu dài.
           </p>
         </AnimateIn>
 
-        {/* 4 Cards Grid */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* 2 Cards Grid */}
+        <div className="grid gap-10 sm:grid-cols-2">
           {cases.map((item, idx) => (
             <AnimateIn key={idx} animation="slide-up" delay={idx * 100} className="flex flex-col h-full">
               <Card className="border border-brand-primary/5 bg-white hover:border-brand-primary/15 shadow-md hover:shadow-xl transition-all duration-500 rounded-3xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 py-0 gap-0">
                 {/* Image box */}
-                <div className="relative h-48 w-full overflow-hidden flex items-center justify-center border-b border-brand-primary/5 bg-brand-bg-light/30">
+                <div className="relative h-64 w-full overflow-hidden flex items-center justify-center border-b border-brand-primary/5 bg-brand-bg-light/30">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -80,12 +79,6 @@ export default function CasesSection() {
           ))}
         </div>
 
-        {/* Quote Banner */}
-        <AnimateIn className="mt-16 max-w-4xl mx-auto text-center px-4" delay={200}>
-          <p className="text-base sm:text-lg lg:text-xl font-medium leading-relaxed italic text-brand-dark">
-            Hãy cho con niềng răng sớm vì điều này không những giúp bé thay đổi về mặt thẩm mỹ, hỗ trợ con ăn nhai khỏe, giúp hệ tiêu hóa làm việc ổn định. Đặc biệt còn giúp bé lấy được sự tự tin và dễ dàng nắm bắt những cơ hội mới trong cuộc sống.
-          </p>
-        </AnimateIn>
       </div>
     </section>
   );
