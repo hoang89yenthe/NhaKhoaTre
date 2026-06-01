@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-green-800/10">
+    <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-white/10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12 mb-12">
           {/* Brand and licensing */}
@@ -17,16 +17,17 @@ export default function Footer() {
                   fill
                   className="object-contain"
                   sizes="60px"
+                  priority
                 />
               </div>
             </Link>
 
-            <div className="space-y-3.5 text-sm text-green-100/80 leading-relaxed">
+            <div className="space-y-3.5 text-sm text-white/80 leading-relaxed">
               <div className="flex items-start gap-2.5">
                 <MapPin className="h-5 w-5 text-brand-accent shrink-0 mt-0.5" />
                 <span>Số 38 Ngụy Như Kon Tum, Phường Nhân Chính, Quận Thanh Xuân, TP.Hà Nội</span>
               </div>
-              <div className="pt-2 border-t border-green-800/25">
+              <div className="pt-2 border-t border-white/10">
                 <p>0107743689 – UBND Quận Thanh Xuân Phòng TC-KH cấp 08/03/2017.</p>
                 <p className="mt-1">Giấy phép hoạt động khám bệnh, chữa bệnh Số: 09/HNO-GPHĐ/CL1</p>
               </div>
@@ -43,7 +44,7 @@ export default function Footer() {
                 {/* TikTok */}
                 <a
                   href="#"
-                  className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white transition-opacity hover:opacity-90 shadow-md"
+                  className="flex h-10 w-10 items-center justify-center rounded-full bg-black text-white transition-opacity hover:opacity-90 shadow-md border border-white/10"
                 >
                   <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
                     <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.06-2.89-.52-4.06-1.39v7.76c-.01 2.37-1.39 4.77-3.77 5.37-2.61.73-5.69-.64-6.42-3.23-.78-2.61.64-5.74 3.28-6.42 1-.27 2.09-.15 3.03.3v-4.14c-1.85-.56-3.83-.43-5.59.38-2.1 1-3.6 3.12-3.77 5.48-.28 3.51 2.39 6.8 5.92 7.07 3.53.28 6.78-2.39 7.06-5.92.01-.13.01-.27.01-.4V7.85c.02-2.61.01-5.22.01-7.83H12.53z" />
@@ -51,7 +52,9 @@ export default function Footer() {
                 </a>
                 {/* Facebook */}
                 <a
-                  href="#"
+                  href="https://facebook.com/nhakhoatre"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-[#1877F2] text-white transition-opacity hover:opacity-90 shadow-md"
                 >
                   <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24">
@@ -71,9 +74,9 @@ export default function Footer() {
             </div>
 
             {/* Email, hotline, and badge */}
-            <div className="flex flex-col md:items-end gap-3 text-sm text-green-100/90 leading-relaxed">
+            <div className="flex flex-col md:items-end gap-3 text-sm text-white/90 leading-relaxed">
               <div className="space-y-1 md:text-right">
-                <span className="text-xs font-semibold text-green-200/70 block">Hỗ trợ khách hàng</span>
+                <span className="text-xs font-semibold text-white/60 block">Hỗ trợ khách hàng</span>
                 <a
                   href="mailto:cskh.nhakhoatre@gmail.com"
                   className="flex items-center gap-2 md:justify-end hover:text-brand-accent transition-colors font-semibold"
@@ -84,7 +87,7 @@ export default function Footer() {
               </div>
               
               <div className="space-y-1 md:text-right">
-                <span className="text-xs font-semibold text-green-200/70 block">Hotline</span>
+                <span className="text-xs font-semibold text-white/60 block">Hotline</span>
                 <a
                   href="tel:0901334334"
                   className="flex items-center gap-2 md:justify-end font-bold text-base hover:text-brand-accent transition-colors"
@@ -111,7 +114,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom credits */}
-        <div className="border-t border-green-800/25 pt-6 text-center text-xs text-green-200/50 flex flex-col sm:flex-row justify-between gap-4">
+        <div className="border-t border-white/10 pt-6 text-center text-xs text-white/40 flex flex-col sm:flex-row justify-between gap-4">
           <span>&copy; {new Date().getFullYear()} Nha Khoa Trẻ. All rights reserved.</span>
           <div className="flex justify-center gap-6">
             <a href="#" className="hover:text-brand-accent transition-colors">Chính sách bảo mật</a>

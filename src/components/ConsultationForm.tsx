@@ -243,9 +243,9 @@ export default function ConsultationForm() {
 
       {/* Success Dialog */}
       <Dialog open={showSuccess} onOpenChange={handleClose}>
-        <DialogContent className="max-w-md rounded-3xl border border-brand-primary/10 bg-white p-8 text-brand-dark shadow-2xl text-center">
+        <DialogContent className="sm:max-w-md w-[92vw] sm:w-full rounded-3xl border border-brand-primary/10 bg-white p-8 text-brand-dark shadow-2xl text-center">
           <DialogHeader className="flex flex-col items-center gap-4">
-            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-green-50 text-brand-primary">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-brand-bg-light text-brand-primary border border-brand-primary/10">
               <CheckCircle className="h-10 w-10 text-brand-primary" />
             </div>
             <DialogTitle className="text-2xl font-black font-serif text-brand-dark">
