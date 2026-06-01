@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 export default function Testimonials() {
@@ -33,7 +31,7 @@ export default function Testimonials() {
               alt="Kết quả chỉnh nha thực tế tại Nha Khoa Trẻ"
               fill
               className="object-contain bg-white"
-              sizes="(max-w-7xl) 100vw, 768px"
+              sizes="(max-width: 768px) 100vw, 768px"
             />
           </div>
 

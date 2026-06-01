@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 export default function AppliancesSection() {
@@ -7,23 +5,18 @@ export default function AppliancesSection() {
     {
       title: "Khay trong suốt Essential",
       image: "/images/appliances/appliance_essential.png",
-      highlighted: false,
     },
     {
       title: "Chỉnh nha Hàm tháo lắp",
       image: "/images/appliances/appliance_ham_thao_lap.png",
-      highlighted: false,
     },
     {
       title: "Mắc cài phân đoạn",
       image: "/images/appliances/appliance_mac_cai_phan_doan.png",
-      highlighted: false,
-      badge: "Mắc cài phân đoạn",
     },
     {
       title: "Chỉnh nha Invisalign First",
       image: "/images/appliances/appliance_invisalign_first.png",
-      highlighted: false,
     },
   ];
 
@@ -44,7 +37,7 @@ export default function AppliancesSection() {
             CÁC PHƯƠNG TIỆN CHỈNH NHA TRẺ EM
           </h2>
           <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Nha Khoa Trẻ tự hào là phòng khám tiên phong công nghệ số trong điều trị mang lại sự an toàn và chính xác đến 99%, với đội ngũ bác sĩ chuyên môn cao cùng cơ sở vật chất hiện đại, không gian thân thiện, thoải mái
+            Nha Khoa Trẻ áp dụng đa dạng các phương tiện chỉnh nha hiện đại, phù hợp với từng độ tuổi và tình trạng răng của bé, đảm bảo hiệu quả điều trị tối ưu và thoải mái nhất.
           </p>
         </div>
 
@@ -55,13 +48,7 @@ export default function AppliancesSection() {
               key={idx}
               className="flex flex-col items-center text-center dock-item"
             >
-              <div
-                className={`relative rounded-full flex items-center justify-center overflow-hidden bg-white dock-item-circle ${
-                  item.highlighted
-                    ? "h-36 w-36 md:h-44 md:w-44 border-4 border-brand-primary shadow-lg ring-4 ring-brand-primary/10"
-                    : "h-24 w-24 md:h-28 md:w-28 border border-green-800/10 shadow-sm hover:h-36 hover:w-36 md:hover:h-44 md:hover:w-44 hover:border-4 hover:border-brand-primary hover:shadow-lg hover:ring-4 hover:ring-brand-primary/10"
-                }`}
-              >
+              <div className="relative h-24 w-24 md:h-28 md:w-28 rounded-full flex items-center justify-center overflow-hidden bg-white border border-green-800/10 shadow-sm hover:h-36 hover:w-36 md:hover:h-44 md:hover:w-44 hover:border-4 hover:border-brand-primary hover:shadow-lg hover:ring-4 hover:ring-brand-primary/10 dock-item-circle">
                 <Image
                   src={item.image}
                   alt={item.title}
@@ -70,7 +57,7 @@ export default function AppliancesSection() {
                   sizes="180px"
                 />
               </div>
-              <h3 className={`mt-4 text-sm font-bold text-brand-dark font-serif max-w-[150px] ${item.highlighted ? "text-base md:text-lg font-black" : ""}`}>
+              <h3 className="mt-4 text-sm font-bold text-brand-dark font-serif max-w-[150px]">
                 {item.title}
               </h3>
             </div>
@@ -116,10 +103,10 @@ export default function AppliancesSection() {
                 Nhược điểm
               </h4>
               <ul className="space-y-3">
-                {cons.map((item, idx) => (
+                {cons.map((con, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-xs sm:text-sm text-gray-600 leading-relaxed">
                     <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#E5A93C] shrink-0"></span>
-                    <span>{item}</span>
+                    <span>{con}</span>
                   </li>
                 ))}
               </ul>

@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 export default function DoctorsSection() {
@@ -32,7 +30,7 @@ export default function DoctorsSection() {
               alt="Đội ngũ bác sĩ chuyên môn cao tại Nha Khoa Trẻ"
               fill
               className="object-contain"
-              sizes="(max-w-7xl) 100vw, 1024px"
+              sizes="(max-width: 1024px) 100vw, 1024px"
             />
           </div>
         </div>
