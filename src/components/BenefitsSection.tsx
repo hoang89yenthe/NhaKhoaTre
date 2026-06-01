@@ -37,46 +37,62 @@ export default function BenefitsSection() {
           <div className="mx-auto mt-4 h-1 w-20 rounded bg-brand-accent"></div>
         </AnimateIn>
 
-        {/* 2x2 Grid */}
-        <div className="grid gap-8 lg:grid-cols-2">
-          {benefits.map((item, idx) => (
-            <AnimateIn
-              key={idx}
-              animation={idx % 2 === 0 ? "slide-left" : "slide-right"}
-              delay={idx < 2 ? 0 : 100}
-              className="flex flex-col"
-            >
-              <Card className="border border-green-800/10 bg-white text-brand-dark shadow-md rounded-3xl overflow-hidden hover:shadow-xl hover:-translate-y-1 hover:border-brand-primary/20 transition-all duration-300 flex flex-col h-full">
-                {/* Image */}
-                <div className="relative h-56 w-full shrink-0 bg-white border-b border-green-800/5 overflow-hidden">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="object-cover transition-transform duration-700 hover:scale-105"
-                    sizes="(max-width: 1280px) 100vw, 400px"
-                  />
-                </div>
+        {/* Bento Grid (12-column layout) */}
+        <div className="grid gap-8 lg:grid-cols-12">
+          {benefits.map((item, idx) => {
+            const isWide = idx === 0 || idx === 3;
+            const colSpanClass = isWide ? "lg:col-span-7" : "lg:col-span-5";
+            const animDir = idx % 2 === 0 ? "slide-left" : "slide-right";
 
-                {/* Text */}
-                <CardContent className="p-6 flex flex-col justify-between flex-grow">
-                  <div>
-                    <div className="flex items-center gap-3">
-                      <span className="text-xs font-black tracking-widest text-brand-primary-light uppercase">
-                        Lý do {idx + 1}
-                      </span>
-                    </div>
-                    <h3 className="text-xl font-bold leading-snug mt-3 text-brand-primary font-serif">
-                      {item.title}
-                    </h3>
-                    <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed">
-                      {item.desc}
-                    </p>
+            return (
+              <AnimateIn
+                key={idx}
+                animation={animDir}
+                delay={idx * 80}
+                className={`flex flex-col ${colSpanClass}`}
+              >
+                <Card className={`border border-brand-primary/5 bg-white text-brand-dark shadow-md hover:shadow-xl hover:-translate-y-1.5 hover:border-brand-primary/15 transition-all duration-500 rounded-3xl overflow-hidden flex flex-col h-full ${
+                  isWide ? "lg:flex-row" : ""
+                }`}>
+                  {/* Image */}
+                  <div className={`relative shrink-0 bg-white border-b lg:border-b-0 border-brand-primary/5 overflow-hidden h-56 ${
+                    isWide ? "lg:w-[42%] lg:h-auto" : "w-full"
+                  } ${
+                    idx === 3 ? "lg:order-2 lg:border-l border-brand-primary/5" : ""
+                  } ${
+                    idx === 0 ? "lg:border-r border-brand-primary/5" : ""
+                  }`}>
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      className="object-cover transition-transform duration-700 hover:scale-105"
+                      sizes="(max-width: 1024px) 100vw, 400px"
+                    />
                   </div>
-                </CardContent>
-              </Card>
-            </AnimateIn>
-          ))}
+
+                  {/* Text Content */}
+                  <CardContent className={`p-6 sm:p-8 flex flex-col justify-between flex-grow ${
+                    idx === 3 ? "lg:order-1" : ""
+                  }`}>
+                    <div>
+                      <div className="flex items-center">
+                        <span className="text-xs font-black tracking-widest text-brand-primary-light uppercase bg-brand-bg-light px-2.5 py-1 rounded-full border border-brand-primary/5">
+                          Lý do 0{idx + 1}
+                        </span>
+                      </div>
+                      <h3 className="text-lg sm:text-xl font-bold leading-snug mt-4 text-brand-primary font-serif">
+                        {item.title}
+                      </h3>
+                      <p className="mt-3 text-sm text-gray-500 leading-relaxed">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+              </AnimateIn>
+            );
+          })}
         </div>
       </div>
     </section>

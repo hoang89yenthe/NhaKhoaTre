@@ -5,47 +5,101 @@ export default function DoctorsSection() {
   return (
     <section id="about" className="bg-white py-20 lg:py-28 relative overflow-hidden">
       {/* Background radial accent */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-brand-bg-light/40 rounded-full blur-3xl pointer-events-none -z-10"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-brand-bg-light/45 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <AnimateIn className="text-center max-w-4xl mx-auto mb-12">
-          <h2 className="text-2xl font-black tracking-tight text-brand-primary sm:text-3xl lg:text-4xl font-serif">
-            NHA KHOA TRẺ - ĐỊA CHỈ TIN CẬY CHO CÁC BA MẸ CHỈNH NHA CHO TRẺ
+        <AnimateIn className="text-center max-w-4xl mx-auto mb-16">
+          <span className="text-brand-primary-light font-black uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
+            Đội Ngũ Chuyên Gia
+          </span>
+          <h2 className="text-2xl font-black tracking-tight text-brand-primary sm:text-3xl lg:text-4xl font-serif leading-tight">
+            NHA KHOA TRẺ - ĐỊA CHỈ NIỀM TIN CỦA HÀNG NGÀN CHA MẸ
           </h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded bg-brand-accent"></div>
-          <p className="mt-6 text-base sm:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
-            Nha Khoa Trẻ tự hào là phòng khám tiên phong công nghệ số trong điều trị mang lại sự an toàn và chính xác đến 99%, với đội ngũ bác sĩ chuyên môn cao cùng cơ sở vật chất hiện đại, không gian thân thiện, thoải mái:
-          </p>
-          <div className="mt-8 flex justify-center">
-            <h3 className="text-xl font-bold tracking-wider text-brand-primary uppercase">
-              BÁC SỸ CÓ CHUYÊN MÔN CAO
-            </h3>
-          </div>
+          <div className="mx-auto mt-4 h-1.5 w-16 rounded bg-brand-accent"></div>
         </AnimateIn>
 
-        {/* Doctor Team Group Photo */}
-        <AnimateIn animation="scale-up" delay={100} className="relative mx-auto max-w-5xl overflow-hidden bg-white p-2">
-          <div className="relative h-[200px] sm:h-[300px] md:h-[400px] lg:h-[450px] w-full overflow-hidden">
-            <Image
-              src="/images/doctors-team.png"
-              alt="Đội ngũ bác sĩ chuyên môn cao tại Nha Khoa Trẻ"
-              fill
-              className="object-contain"
-              sizes="(max-width: 1024px) 100vw, 1024px"
-            />
+        {/* 2 Columns Layout */}
+        <div className="grid gap-12 lg:grid-cols-12 lg:items-center">
+          {/* Left: Doctor Team Group Photo */}
+          <div className="lg:col-span-6 relative group px-4">
+            <div className="absolute inset-0 rounded-3xl bg-brand-accent/15 blur-2xl scale-105 pointer-events-none transition-all group-hover:scale-110 duration-700" />
+            <div className="absolute inset-0 translate-x-3 translate-y-3 border border-brand-primary/10 rounded-3xl -z-10 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5 duration-500" />
+            
+            <AnimateIn animation="scale-up" className="relative overflow-hidden bg-brand-bg-light/30 border border-brand-primary/10 rounded-3xl p-4 shadow-xl">
+              <div className="relative h-[250px] sm:h-[350px] md:h-[400px] w-full overflow-hidden rounded-2xl">
+                <Image
+                  src="/images/doctors-team.png"
+                  alt="Đội ngũ bác sĩ chuyên môn cao tại Nha Khoa Trẻ"
+                  fill
+                  className="object-contain hover:scale-102 transition-transform duration-500"
+                  sizes="(max-width: 1024px) 100vw, 550px"
+                  priority
+                />
+              </div>
+            </AnimateIn>
           </div>
-        </AnimateIn>
 
-        {/* Credentials */}
-        <AnimateIn animation="slide-up" delay={200} className="mt-12 text-center max-w-2xl mx-auto space-y-4">
-          <h3 className="text-3xl sm:text-4xl md:text-[40px] font-black tracking-tight text-brand-accent font-serif leading-tight">
-            100% TỐT NGHIỆP ĐẠI HỌC Y HÀ NỘI
-          </h3>
-          <p className="text-base sm:text-lg font-bold text-brand-dark">
-            Đào tạo chuyên sâu chỉnh nha trẻ em trong nước và nước ngoài.
-          </p>
-        </AnimateIn>
+          {/* Right: Individual Doctor Highlights */}
+          <div className="lg:col-span-6 space-y-6">
+            <AnimateIn animation="slide-right" delay={100}>
+              <div className="border border-brand-primary/5 bg-brand-bg-light/45 p-6 rounded-2xl">
+                <h3 className="text-xl sm:text-2xl font-black text-brand-primary font-serif leading-tight">
+                  100% TỐT NGHIỆP ĐẠI HỌC Y HÀ NỘI
+                </h3>
+                <p className="mt-2 text-sm text-gray-500 leading-relaxed font-semibold">
+                  Đội ngũ bác sĩ chính quy chuyên khoa Răng Hàm Mặt, được đào tạo chuyên sâu chỉnh nha trẻ em và ứng dụng công nghệ số toàn diện trong điều trị.
+                </p>
+              </div>
+            </AnimateIn>
+
+            {/* Doctor Profiles List */}
+            <div className="space-y-4">
+              {[
+                {
+                  name: "Bác sĩ Nguyễn Huy Hoàng",
+                  title: "Trưởng phòng khám Nha Khoa Trẻ",
+                  desc: "Chuyên gia chỉnh nha tăng trưởng, chứng chỉ Invisalign Mỹ, hơn 15 năm lâm sàng.",
+                },
+                {
+                  name: "Bác sĩ Trịnh Thị Lệ Xuân",
+                  title: "Bác sĩ Chỉnh nha Chuyên sâu trẻ em",
+                  desc: "Thành viên Hiệp hội Chỉnh nha Thế giới (WFO), chuyên gia niềng răng mắc cài tự buộc và Invisalign First.",
+                },
+                {
+                  name: "Bác sĩ Phạm Thùy Anh",
+                  title: "Bác sĩ Chỉnh nha Thẩm mỹ",
+                  desc: "Tốt nghiệp Đại học Y Hà Nội, chuyên sâu khay chỉnh nha sớm Essential và các khí cụ tháo lắp cho trẻ.",
+                },
+              ].map((doc, docIdx) => (
+                <AnimateIn
+                  key={docIdx}
+                  animation="slide-up"
+                  delay={150 + docIdx * 80}
+                >
+                  <div className="border border-brand-primary/5 hover:border-brand-primary/15 bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 group flex items-start gap-4">
+                    {/* Circle badge count */}
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-bg-light text-brand-primary font-black border border-brand-primary/10 group-hover:bg-brand-primary group-hover:text-white transition-colors duration-300">
+                      0{docIdx + 1}
+                    </div>
+                    {/* Doctor Info */}
+                    <div className="flex-grow min-w-0">
+                      <h4 className="text-base font-black text-brand-dark font-serif group-hover:text-brand-primary transition-colors">
+                        {doc.name}
+                      </h4>
+                      <p className="text-xs font-bold text-brand-accent mt-0.5 uppercase tracking-wide">
+                        {doc.title}
+                      </p>
+                      <p className="text-sm text-gray-500 mt-2 leading-relaxed">
+                        {doc.desc}
+                      </p>
+                    </div>
+                  </div>
+                </AnimateIn>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

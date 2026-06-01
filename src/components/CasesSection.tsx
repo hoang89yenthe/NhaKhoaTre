@@ -38,15 +38,15 @@ export default function CasesSection() {
       </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <AnimateIn className="text-center max-w-4xl mx-auto mb-12">
-          <span className="font-script text-3xl sm:text-4xl text-brand-primary-light font-bold block mb-1">
-            Những trường hợp
+        <AnimateIn className="text-center max-w-4xl mx-auto mb-16">
+          <span className="text-brand-primary-light font-black uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
+            Chỉ Định Nha Khoa
           </span>
           <h2 className="text-3xl font-extrabold tracking-tight text-brand-dark sm:text-4xl font-serif">
             NÊN CHỈNH NHA SỚM
           </h2>
-          <div className="mx-auto mt-4 h-1 w-20 rounded bg-brand-accent"></div>
-          <p className="mt-6 text-sm sm:text-base text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <div className="mx-auto mt-4 h-1.5 w-16 rounded bg-brand-accent"></div>
+          <p className="mt-6 text-sm sm:text-base text-gray-500 leading-relaxed max-w-3xl mx-auto">
             Việc kiểm tra nha khoa định kỳ mỗi 6 tháng không chỉ giúp vệ sinh răng miệng mà còn hỗ trợ phát hiện sớm các vấn đề nhờ sử dụng hình ảnh phim chụp. Những vấn đề này có thể bao gồm tình trạng thiếu mầm răng vĩnh viễn, răng mọc ngầm, hoặc mầm răng vĩnh viễn mọc sai vị trí.
           </p>
         </AnimateIn>
@@ -55,23 +55,23 @@ export default function CasesSection() {
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {cases.map((item, idx) => (
             <AnimateIn key={idx} animation="slide-up" delay={idx * 100} className="flex flex-col h-full">
-              <Card className="border border-green-800/10 bg-white shadow-md hover:shadow-xl transition-all duration-300 rounded-2xl overflow-hidden group flex flex-col h-full hover:-translate-y-1">
+              <Card className="border border-brand-primary/5 bg-white hover:border-brand-primary/15 shadow-md hover:shadow-xl transition-all duration-500 rounded-3xl overflow-hidden group flex flex-col h-full hover:-translate-y-2">
                 {/* Image box */}
-                <div className="relative h-48 w-full overflow-hidden flex items-center justify-center border-b border-green-800/5">
+                <div className="relative h-48 w-full overflow-hidden flex items-center justify-center border-b border-brand-primary/5 bg-brand-bg-light/30">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.06]"
                     sizes="(max-width: 1280px) 100vw, 250px"
                   />
                 </div>
                 {/* Content box */}
                 <CardContent className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-bold text-brand-dark group-hover:text-brand-primary transition-colors font-serif">
+                  <h3 className="text-lg font-black text-brand-dark group-hover:text-brand-primary transition-colors font-serif leading-snug">
                     {item.title}
                   </h3>
-                  <p className="mt-3 text-sm sm:text-base text-gray-500 leading-relaxed flex-grow">
+                  <p className="mt-3 text-sm text-gray-500 leading-relaxed flex-grow">
                     {item.desc}
                   </p>
                 </CardContent>

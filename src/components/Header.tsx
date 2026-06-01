@@ -27,11 +27,11 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-green-800/10 bg-brand-primary text-white backdrop-blur-md shadow-md">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-brand-primary/80 backdrop-blur-lg shadow-lg">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="#" className="flex items-center group">
-          <div className="relative h-12 w-32 md:w-36 transition-transform group-hover:scale-[1.02]">
+          <div className="relative h-12 w-32 md:w-36 transition-transform duration-300 group-hover:scale-[1.03]">
             <Image
               src="/images/logo.png"
               alt="Nha Khoa Trẻ Logo"
@@ -50,7 +50,7 @@ export default function Header() {
               key={link.href}
               href={link.href}
               onClick={(e) => handleScroll(e, link.href)}
-              className="text-sm font-semibold tracking-wide text-green-100/90 transition-colors hover:text-brand-accent"
+              className="text-sm font-semibold tracking-wide text-green-100/90 transition-colors hover:text-brand-accent nav-link-underline pb-1"
             >
               {link.label}
             </Link>
@@ -61,7 +61,7 @@ export default function Header() {
         <div className="flex md:hidden items-center gap-4">
           <a
             href="tel:0901334334"
-            className="flex h-10 w-10 items-center justify-center rounded-full bg-green-800/30 text-brand-accent transition-colors hover:bg-green-800/50"
+            className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-brand-accent transition-colors hover:bg-white/20 shadow-sm"
           >
             <Phone className="h-4 w-4" />
           </a>
@@ -71,7 +71,7 @@ export default function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-green-800/30 rounded-full h-10 w-10"
+                  className="text-white hover:bg-white/10 rounded-full h-10 w-10"
                 />
               }
             >
@@ -80,7 +80,7 @@ export default function Header() {
             </SheetTrigger>
             <SheetContent
               side="right"
-              className="w-[280px] border-l border-green-800/20 bg-brand-dark p-6 text-white"
+              className="w-[280px] border-l border-white/10 bg-brand-dark/95 backdrop-blur-xl p-6 text-white"
             >
               <SheetTitle className="text-left text-lg font-bold text-brand-accent mb-6 font-serif">
                 Nha Khoa Trẻ
@@ -91,12 +91,12 @@ export default function Header() {
                     key={link.href}
                     href={link.href}
                     onClick={(e) => handleScroll(e, link.href)}
-                    className="text-base font-semibold text-green-100 hover:text-brand-accent transition-colors border-b border-green-800/10 pb-2"
+                    className="text-base font-semibold text-green-100 hover:text-brand-accent transition-colors border-b border-white/5 pb-2"
                   >
                     {link.label}
                   </Link>
                 ))}
-                <div className="mt-8 pt-6 border-t border-green-800/20 flex flex-col gap-4">
+                <div className="mt-8 pt-6 border-t border-white/10 flex flex-col gap-4">
                   <a
                     href="tel:0901334334"
                     className="flex items-center gap-3 text-sm font-semibold text-green-100 hover:text-brand-accent"
@@ -106,7 +106,7 @@ export default function Header() {
                   </a>
                   <Button
                     onClick={(e) => handleScroll(e, "#register")}
-                    className="w-full rounded-full bg-brand-accent text-brand-dark font-bold hover:bg-brand-accent-light h-10 text-sm"
+                    className="w-full rounded-full bg-brand-accent text-brand-dark font-bold hover:bg-brand-accent-light h-10 text-sm animate-shimmer-btn shadow-md"
                   >
                     Đăng ký tư vấn
                   </Button>

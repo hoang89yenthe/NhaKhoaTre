@@ -65,44 +65,50 @@ export default function AppliancesSection() {
         </div>
 
         {/* Focus Detail */}
-        <AnimateIn animation="slide-up" delay={100} className="relative mx-auto max-w-4xl bg-white rounded-3xl p-6 md:p-10 border border-green-800/10 shadow-lg flex flex-col items-center">
-          <div className="relative h-60 w-60 sm:h-72 sm:w-72 overflow-hidden bg-white mb-6">
+        <AnimateIn animation="slide-up" delay={100} className="relative mx-auto max-w-4xl bg-white rounded-3xl p-8 md:p-12 border border-brand-primary/10 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col items-center">
+          <div className="relative h-60 w-60 sm:h-64 sm:w-64 overflow-hidden bg-white mb-6">
             <Image
               src="/images/appliances/appliance_bracket_detail.png"
               alt="Mắc cài kim loại 3M Mỹ"
               fill
-              className="object-contain"
+              className="object-contain hover:scale-102 transition-transform duration-500"
               sizes="300px"
             />
           </div>
 
           <h3 className="text-2xl font-black text-brand-primary sm:text-3xl font-serif text-center mb-8">
-            MẮC CÀI KIM LOẠI <span className="text-brand-dark">(Mắc cài 3m - Mỹ)</span>
+            MẮC CÀI KIM LOẠI <span className="text-brand-dark font-sans text-xl sm:text-2xl font-bold">(Mắc cài 3M - Mỹ)</span>
           </h3>
 
-          <div className="grid gap-8 md:grid-cols-2 w-full border-t border-green-800/10 pt-8">
+          <div className="grid gap-8 md:grid-cols-2 w-full border-t border-brand-primary/10 pt-8">
             {/* Pros */}
             <div className="space-y-4">
-              <h4 className="text-sm font-black text-brand-primary uppercase tracking-wider border-b border-green-800/10 pb-1 w-fit">
-                Ưu điểm
+              <h4 className="text-sm font-black text-brand-primary-light uppercase tracking-wider border-b border-brand-primary/5 pb-2 w-full flex items-center gap-2">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-primary-light/10 text-brand-primary-light text-xs font-bold">✓</span>
+                Ưu điểm nổi bật
               </h4>
-              <ul className="space-y-2">
-                <li className="flex items-start gap-2 text-sm text-gray-700 font-semibold leading-relaxed">
-                  <span className="mt-1 h-2 w-2 rounded-full bg-brand-primary shrink-0"></span>
-                  <span>Giá thành rẻ hơn</span>
+              <ul className="space-y-3">
+                <li className="flex items-start gap-3 text-sm text-gray-600 leading-relaxed font-semibold">
+                  <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-primary-light/10 text-brand-primary-light text-[10px]">✓</span>
+                  <span>Chi phí tối ưu, tiết kiệm nhất trong các phương pháp chỉnh nha.</span>
+                </li>
+                <li className="flex items-start gap-3 text-sm text-gray-600 leading-relaxed font-semibold">
+                  <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-primary-light/10 text-brand-primary-light text-[10px]">✓</span>
+                  <span>Hiệu quả lực kéo ổn định, giúp rút ngắn thời gian chỉnh răng.</span>
                 </li>
               </ul>
             </div>
 
             {/* Cons */}
             <div className="space-y-4">
-              <h4 className="text-sm font-black text-brand-primary uppercase tracking-wider border-b border-green-800/10 pb-1 w-fit">
-                Nhược điểm
+              <h4 className="text-sm font-black text-brand-accent uppercase tracking-wider border-b border-brand-primary/5 pb-2 w-full flex items-center gap-2">
+                <span className="flex h-5 w-5 items-center justify-center rounded-full bg-brand-accent/10 text-brand-accent text-xs font-bold">!</span>
+                Nhược điểm cần lưu ý
               </h4>
               <ul className="space-y-3">
                 {cons.map((con, idx) => (
-                  <li key={idx} className="flex items-start gap-2 text-sm text-gray-600 leading-relaxed">
-                    <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-[#E5A93C] shrink-0"></span>
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-500 leading-relaxed">
+                    <span className="mt-1 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-accent/15 text-brand-accent text-[10px] font-bold">!</span>
                     <span>{con}</span>
                   </li>
                 ))}
