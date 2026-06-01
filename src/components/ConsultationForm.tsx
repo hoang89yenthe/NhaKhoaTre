@@ -12,7 +12,9 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
-import { CheckCircle } from "lucide-react";
+import { CheckCircle, Loader2 } from "lucide-react";
+
+const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ?? "";
 
 export default function ConsultationForm() {
   const [formData, setFormData] = React.useState({
@@ -22,6 +24,7 @@ export default function ConsultationForm() {
     desire: "",
   });
   const [errors, setErrors] = React.useState({ fullName: "", phone: "" });
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
   const [showSuccess, setShowSuccess] = React.useState(false);
 
   const validate = () => {
@@ -32,10 +35,31 @@ export default function ConsultationForm() {
     return !newErrors.fullName && !newErrors.phone;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
-    setShowSuccess(true);
+
+    setIsSubmitting(true);
+    try {
+      if (APPS_SCRIPT_URL) {
+        await fetch(APPS_SCRIPT_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
+          body: JSON.stringify({
+            fullName: formData.fullName,
+            phone: formData.phone,
+            status: formData.status,
+            desire: formData.desire,
+          }),
+        });
+      }
+    } catch {
+      // no-cors luôn trả về opaque response, lỗi mạng thật sự mới vào đây
+    } finally {
+      setIsSubmitting(false);
+      setShowSuccess(true);
+    }
   };
 
   const handleClose = () => {
@@ -128,9 +152,17 @@ export default function ConsultationForm() {
               <div className="pt-4 flex justify-center">
                 <Button
                   type="submit"
-                  className="w-full sm:w-auto px-16 py-6 rounded-full bg-brand-dark hover:bg-brand-dark/90 text-brand-accent font-black text-xl sm:text-2xl shadow-lg border-2 border-brand-primary transition-all hover:scale-[1.03] uppercase tracking-wider h-14 flex items-center justify-center anim-pulse-ring"
+                  disabled={isSubmitting}
+                  className="w-full sm:w-auto px-16 py-6 rounded-full bg-brand-dark hover:bg-brand-dark/90 text-brand-accent font-black text-xl sm:text-2xl shadow-lg border-2 border-brand-primary transition-all hover:scale-[1.03] uppercase tracking-wider h-14 flex items-center justify-center anim-pulse-ring disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
                 >
-                  ĐĂNG KÝ NGAY!
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                      Đang gửi...
+                    </>
+                  ) : (
+                    "ĐĂNG KÝ NGAY!"
+                  )}
                 </Button>
               </div>
             </form>
