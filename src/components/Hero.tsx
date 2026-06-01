@@ -67,17 +67,18 @@ export default function Hero() {
           </div>
 
           {/* Hero Right Image */}
-          <div className="relative lg:col-span-5 flex justify-center anim-slide-right anim-delay-300">
+          <div className="relative lg:col-span-5 flex justify-center anim-slide-right anim-delay-300 items-center px-4">
             {/* Soft glow behind the image */}
             <div className="absolute inset-0 rounded-[50px] bg-brand-accent/25 blur-2xl scale-110 pointer-events-none" />
-            <div className="relative h-[320px] w-[320px] sm:h-[400px] sm:w-[400px] md:h-[450px] md:w-[450px] overflow-hidden rounded-[40px] shadow-2xl">
+            <div className="relative w-full max-w-[450px] aspect-square overflow-hidden rounded-3xl shadow-2xl transition-transform hover:shadow-3xl">
               <Image
                 src="/images/hero-dentist.png"
                 alt="Bác sĩ khám răng cho bé tại Nha Khoa Trẻ"
                 fill
                 priority
-                className="object-cover hover:scale-105 transition-transform duration-700"
-                sizes="(max-width: 1280px) 100vw, 450px"
+                quality={95}
+                className="object-cover object-center hover:scale-105 transition-transform duration-700"
+                sizes="(max-width: 640px) 90vw, (max-width: 1024px) 80vw, 450px"
               />
             </div>
           </div>
