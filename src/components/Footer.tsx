@@ -99,15 +99,22 @@ export default function Footer() {
 
               {/* Ministry badge */}
               <div className="pt-2">
-                <div className="relative h-12 w-[120px]">
-                  <Image
-                    src="/images/bocongthuong_badge.png"
-                    alt="Đã thông báo Bộ Công Thương"
-                    fill
-                    className="object-contain"
-                    sizes="120px"
-                  />
-                </div>
+                <a
+                  href="http://online.gov.vn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block transition-transform hover:scale-[1.03]"
+                >
+                  <div className="relative h-12 w-[130px]">
+                    <Image
+                      src="/images/bocongthuong_badge.png"
+                      alt="Đã thông báo Bộ Công Thương"
+                      fill
+                      className="object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
+                      sizes="130px"
+                    />
+                  </div>
+                </a>
               </div>
             </div>
           </div>

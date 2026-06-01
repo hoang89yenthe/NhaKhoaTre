@@ -131,7 +131,7 @@ export default function ConsultationForm() {
                           setFormData({ ...formData, fullName: e.target.value });
                           if (errors.fullName) setErrors({ ...errors, fullName: "" });
                         }}
-                        className="pl-11 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl h-11 px-4 text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent w-full"
+                        className="pl-11 pr-4 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl h-11 text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent w-full"
                       />
                     </div>
                     {errors.fullName && (
@@ -156,7 +156,7 @@ export default function ConsultationForm() {
                           setFormData({ ...formData, phone: e.target.value });
                           if (errors.phone) setErrors({ ...errors, phone: "" });
                         }}
-                        className="pl-11 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl h-11 px-4 text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent w-full"
+                        className="pl-11 pr-4 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl h-11 text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent w-full"
                       />
                     </div>
                     {errors.phone && (
@@ -177,7 +177,7 @@ export default function ConsultationForm() {
                         placeholder="VD: Răng bé mọc lệch, thưa, hô, móm..."
                         value={formData.status}
                         onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                        className="pl-11 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl min-h-[80px] p-3 text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent resize-none w-full"
+                        className="pl-11 pr-4 py-3 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl min-h-[80px] text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent resize-none w-full"
                       />
                     </div>
                   </div>
@@ -195,7 +195,7 @@ export default function ConsultationForm() {
                         placeholder="VD: Mong muốn răng con đều đẹp, tự tin cười..."
                         value={formData.desire}
                         onChange={(e) => setFormData({ ...formData, desire: e.target.value })}
-                        className="pl-11 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl min-h-[80px] p-3 text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent resize-none w-full"
+                        className="pl-11 pr-4 py-3 bg-white/10 text-white placeholder:text-green-200/50 border-white/20 rounded-xl min-h-[80px] text-left shadow-sm focus-visible:ring-2 focus-visible:ring-brand-accent focus:border-brand-accent resize-none w-full"
                       />
                     </div>
                   </div>
