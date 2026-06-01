@@ -69,7 +69,7 @@ export default function ConsultationForm() {
   };
 
   return (
-    <section id="register" className="bg-brand-bg-light py-20 lg:py-28 relative">
+    <section id="register" className="bg-brand-bg-light pt-20 pb-36 lg:pt-28 relative">
       <div className="mx-auto max-w-4xl px-4 sm:px-6">
         <Card className="border border-green-800/10 bg-brand-form-bg text-white shadow-2xl rounded-3xl overflow-hidden">
           <CardContent className="p-8 sm:p-12">
@@ -168,6 +168,22 @@ export default function ConsultationForm() {
             </form>
           </CardContent>
         </Card>
+      </div>
+
+      {/* Wave transition → dark footer below */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none">
+        <svg
+          className="block w-full"
+          style={{ height: "64px" }}
+          viewBox="0 0 1440 64"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,64 L0,32 C240,0 480,64 720,32 C960,0 1200,64 1440,32 L1440,64 Z"
+            fill="#073E23"
+          />
+        </svg>
       </div>
 
       {/* Success Dialog */}

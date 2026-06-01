@@ -27,7 +27,7 @@ export default function BenefitsSection() {
   ];
 
   return (
-    <section className="bg-white py-16 relative overflow-hidden">
+    <section className="bg-brand-bg-light py-16 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <AnimateIn className="text-center max-w-3xl mx-auto mb-16">

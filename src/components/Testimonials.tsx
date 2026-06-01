@@ -3,7 +3,7 @@ import AnimateIn from "@/components/AnimateIn";
 
 export default function Testimonials() {
   return (
-    <section className="bg-white py-16 relative">
+    <section className="bg-brand-bg-light py-16 relative">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <AnimateIn className="text-center max-w-3xl mx-auto mb-8">

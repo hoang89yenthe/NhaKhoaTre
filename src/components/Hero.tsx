@@ -34,7 +34,7 @@ export default function Hero() {
   ];
 
   return (
-    <section id="home" className="relative overflow-hidden bg-brand-primary pt-12 pb-20 text-white lg:pt-16">
+    <section id="home" className="relative overflow-hidden bg-brand-primary pt-12 pb-32 text-white lg:pt-16">
       {/* Decorative background blobs */}
       <div className="absolute -top-20 -right-20 h-96 w-96 rounded-full bg-brand-accent/10 blur-3xl pointer-events-none" />
       <div className="absolute bottom-0 -left-24 h-72 w-72 rounded-full bg-white/5 blur-3xl pointer-events-none" />
@@ -133,6 +133,22 @@ export default function Hero() {
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Wave transition → white sections below */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none z-20 pointer-events-none">
+        <svg
+          className="block w-full"
+          style={{ height: "64px" }}
+          viewBox="0 0 1440 64"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,64 L0,32 C240,64 480,0 720,32 C960,64 1200,0 1440,32 L1440,64 Z"
+            fill="white"
+          />
+        </svg>
       </div>
     </section>
   );
