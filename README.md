@@ -2,6 +2,8 @@
 
 Landing page cho phòng khám chỉnh nha trẻ em **Nha Khoa Trẻ**, xây dựng bằng Next.js 16, Tailwind CSS 4, và shadcn/ui.
 
+![Preview](.github/preview.png)
+
 ## Tech Stack
 
 - **Framework**: Next.js 16.2 (App Router, Static Export)
