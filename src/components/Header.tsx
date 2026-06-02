@@ -2,13 +2,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { CLINIC_PHONE_TEL } from "@/lib/content";
 import MobileMenu from "@/components/MobileMenu";
+import DesktopNav from "@/components/DesktopNav";
 
-const navLinks = [
-  { href: "#home",       label: "Trang chủ" },
-  { href: "#about",      label: "Về chúng tôi" },
-  { href: "#appliances", label: "Cẩm nang" },
-  { href: "#register",   label: "Đăng ký tư vấn" },
-];
 
 export default function Header() {
   return (
@@ -29,17 +24,7 @@ export default function Header() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-semibold tracking-wide text-green-100/90 transition-colors hover:text-brand-accent nav-link-underline pb-1"
-            >
-              {link.label}
-            </Link>
-          ))}
-        </nav>
+        <DesktopNav />
 
         {/* Desktop CTA */}
         <div className="hidden md:flex items-center gap-4">

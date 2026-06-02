@@ -19,8 +19,8 @@ export default function ProcessSection() {
         </AnimateIn>
 
         <div className="relative max-w-5xl mx-auto">
-          {/* Center line */}
-          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-brand-accent via-brand-primary-light to-brand-primary/10 pointer-events-none" />
+          {/* Center line — stops at last dot */}
+          <div className="hidden md:block absolute left-1/2 -translate-x-1/2 top-5 bottom-[56px] w-[2px] bg-gradient-to-b from-brand-accent via-brand-primary-light to-transparent pointer-events-none" />
 
           <div className="space-y-10 md:space-y-16">
             {processSteps.map((item, idx) => {

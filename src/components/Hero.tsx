@@ -84,20 +84,20 @@ export default function Hero() {
         {/* Highlights bar */}
         <div className="relative mt-20 lg:mt-24 anim-slide-up anim-delay-700">
           <div className="bg-white/90 backdrop-blur-md border border-white/20 rounded-3xl shadow-2xl relative z-30 overflow-hidden">
-            <div className="grid sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-brand-primary/10">
+            <div className="grid grid-cols-3 divide-x divide-brand-primary/10">
               {heroHighlights.map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex items-center gap-4 px-6 py-5 sm:px-8 sm:py-6 group hover:bg-brand-bg-light/40 transition-colors duration-300"
+                  className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 px-3 py-4 sm:px-8 sm:py-6 group hover:bg-brand-bg-light/40 transition-colors duration-300 text-center sm:text-left"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-primary/5 group-hover:bg-white shadow-sm border border-brand-primary/5 transition-all duration-300 group-hover:scale-110">
+                  <div className="flex h-8 w-8 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-xl bg-brand-primary/5 group-hover:bg-white shadow-sm border border-brand-primary/5 transition-all duration-300 group-hover:scale-110">
                     {icons[idx]}
                   </div>
                   <div className="flex flex-col min-w-0">
-                    <span className="text-base font-black text-brand-primary leading-tight font-serif">
+                    <span className="text-xs sm:text-base font-black text-brand-primary leading-tight font-serif">
                       {item.value}
                     </span>
-                    <span className="text-sm text-gray-500 mt-1.5 leading-snug">
+                    <span className="hidden sm:block text-sm text-gray-500 mt-1.5 leading-snug">
                       {item.desc}
                     </span>
                   </div>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import AnimateIn from "@/components/AnimateIn";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { appliances, bracketPros, bracketCons, type Appliance } from "@/lib/content";
+import { ArrowRight } from "lucide-react";
 
 export default function AppliancesSection() {
   const [selected, setSelected] = React.useState<Appliance | null>(null);
@@ -95,6 +96,16 @@ export default function AppliancesSection() {
                 ))}
               </ul>
             </div>
+          </div>
+          {/* CTA */}
+          <div className="mt-10 pt-8 border-t border-brand-primary/10 flex justify-center">
+            <a
+              href="#register"
+              className="inline-flex items-center gap-2.5 rounded-full bg-brand-primary px-8 py-3.5 text-base font-bold text-white hover:bg-brand-dark transition-colors duration-200 shadow-md"
+            >
+              Tư vấn phương tiện phù hợp cho bé
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </AnimateIn>
       </div>

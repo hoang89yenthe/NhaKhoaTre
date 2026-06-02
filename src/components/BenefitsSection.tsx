@@ -29,7 +29,7 @@ export default function BenefitsSection() {
                 <Card className={`border border-brand-primary/5 bg-white text-brand-dark shadow-md hover:shadow-xl hover:-translate-y-1.5 hover:border-brand-primary/15 transition-all duration-500 rounded-3xl overflow-hidden flex flex-col h-full py-0 gap-0 ${
                   isWide ? "lg:flex-row" : ""
                 }`}>
-                  <div className={`relative shrink-0 bg-white border-b lg:border-b-0 border-brand-primary/5 overflow-hidden h-56 ${
+                  <div className={`relative shrink-0 bg-white border-b lg:border-b-0 border-brand-primary/5 overflow-hidden h-72 ${
                     isWide ? "lg:w-[42%] lg:h-auto" : "w-full"
                   } ${
                     idx === 3 ? "lg:order-2 lg:border-l border-brand-primary/5" : ""
