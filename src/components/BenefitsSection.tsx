@@ -5,7 +5,7 @@ import { benefits } from "@/lib/content";
 
 export default function BenefitsSection() {
   return (
-    <section className="bg-brand-bg-light py-16 relative overflow-hidden">
+    <section className="bg-white py-20 lg:py-28 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateIn className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl font-serif mt-2">

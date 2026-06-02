@@ -19,7 +19,13 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="bg-brand-bg-light/60 py-20 lg:py-28 relative overflow-hidden">
+    <section className="bg-white py-24 lg:py-32 relative overflow-hidden">
+      {/* Wave into dark CTA section below */}
+      <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-none pointer-events-none z-10">
+        <svg className="block w-full" style={{ height: "80px" }} viewBox="0 0 1440 80" preserveAspectRatio="none">
+          <path d="M0,80 L0,55 C240,10 480,80 720,55 C960,30 1200,75 1440,50 L1440,80 Z" fill="#0C4328" />
+        </svg>
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateIn className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-brand-primary-light font-semibold uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">

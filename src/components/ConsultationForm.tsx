@@ -4,7 +4,6 @@ import * as React from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent } from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -70,10 +69,8 @@ export default function ConsultationForm() {
   };
 
   return (
-    <section id="register" className="bg-brand-bg-light/60 pt-20 pb-36 lg:pt-28 relative">
-      <div className="mx-auto max-w-5xl px-4 sm:px-6">
-        <Card className="border border-white/10 bg-brand-form-bg text-white shadow-2xl rounded-[32px] overflow-hidden">
-          <CardContent className="p-8 sm:p-12 md:p-16">
+    <section id="register" className="bg-brand-form-bg pt-12 pb-36 lg:pt-16 relative text-white">
+      <div className="mx-auto max-w-5xl px-4 sm:px-12 md:px-16 py-8 sm:py-12">
             <div className="grid gap-12 lg:grid-cols-12 items-stretch">
               
               {/* Left Column: CTA Info */}
@@ -82,9 +79,9 @@ export default function ConsultationForm() {
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/20 text-brand-accent">
                     <Sparkles className="h-5 w-5" />
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight text-white leading-tight">
+                  <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight leading-tight">
                     Đăng ký hôm nay <br />
-                    <span className="text-brand-accent drop-shadow-sm">nhận ngay ưu đãi</span>
+                    <span className="text-brand-accent">nhận ngay ưu đãi</span>
                   </h2>
                   <p className="text-base text-green-100/90 leading-relaxed">
                     Đăng ký tư vấn chỉnh nha sớm cho bé để nhận được các đặc quyền duy nhất trong tháng này:
@@ -206,7 +203,7 @@ export default function ConsultationForm() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full py-6 rounded-full bg-brand-accent hover:bg-brand-accent-light text-brand-dark font-black text-lg shadow-lg transition-all hover:scale-[1.02] uppercase tracking-wider h-14 flex items-center justify-center animate-shimmer-btn disabled:opacity-75 disabled:cursor-not-allowed disabled:hover:scale-100"
+                      className="w-full py-6 rounded-full bg-brand-accent hover:bg-brand-accent-light text-brand-dark font-bold text-base shadow-lg transition-all hover:scale-[1.02] h-14 flex items-center justify-center animate-shimmer-btn disabled:opacity-75 disabled:cursor-not-allowed disabled:hover:scale-100"
                     >
                       {isSubmitting ? (
                         <>
@@ -214,7 +211,7 @@ export default function ConsultationForm() {
                           Đang xử lý dữ liệu...
                         </>
                       ) : (
-                        "ĐĂNG KÝ TƯ VẤN MIỄN PHÍ!"
+                        "Đăng ký tư vấn miễn phí"
                       )}
                     </Button>
                   </div>
@@ -222,8 +219,6 @@ export default function ConsultationForm() {
               </div>
 
             </div>
-          </CardContent>
-        </Card>
       </div>
 
       {/* Wave transition → dark footer below */}

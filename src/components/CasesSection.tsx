@@ -5,14 +5,7 @@ import { cases } from "@/lib/content";
 
 export default function CasesSection() {
   return (
-    <section id="cases" className="bg-white py-16 relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[300px] h-[300px] opacity-10 pointer-events-none z-0">
-        <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-brand-primary stroke-[1.5]">
-          <path d="M 0 50 Q 25 25 50 50 T 100 50" />
-          <path d="M 0 60 Q 25 35 50 60 T 100 60" />
-          <path d="M 0 70 Q 25 45 50 70 T 100 70" />
-        </svg>
-      </div>
+    <section id="cases" className="bg-white py-24 lg:py-32 relative overflow-hidden">
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
         <AnimateIn className="text-center max-w-4xl mx-auto mb-16">

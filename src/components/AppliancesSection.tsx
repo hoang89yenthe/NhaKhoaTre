@@ -11,7 +11,7 @@ export default function AppliancesSection() {
   const [selected, setSelected] = React.useState<Appliance | null>(null);
 
   return (
-    <section id="appliances" className="bg-white py-16 relative overflow-hidden">
+    <section id="appliances" className="bg-white py-24 lg:py-32 relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <AnimateIn className="text-center max-w-4xl mx-auto mb-12">
           <h2 className="text-3xl font-bold tracking-tight text-brand-dark sm:text-4xl font-serif">

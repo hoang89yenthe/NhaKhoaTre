@@ -4,7 +4,7 @@ import { processSteps } from "@/lib/content";
 
 export default function ProcessSection() {
   return (
-    <section id="process" className="bg-brand-bg-light/45 py-20 lg:py-28 relative overflow-hidden">
+    <section id="process" className="py-24 lg:py-32 relative overflow-hidden bg-gradient-to-b from-white via-brand-bg-light/40 to-white">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative">
         <AnimateIn className="text-center max-w-3xl mx-auto mb-20">
           <span className="text-brand-primary-light font-semibold uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">

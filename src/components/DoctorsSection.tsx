@@ -4,7 +4,7 @@ import { doctors } from "@/lib/content";
 
 export default function DoctorsSection() {
   return (
-    <section id="about" className="bg-white py-20 lg:py-28 relative overflow-hidden">
+    <section id="about" className="bg-white py-28 lg:py-36 relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-brand-bg-light/45 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
