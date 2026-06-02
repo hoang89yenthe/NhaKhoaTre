@@ -11,7 +11,7 @@ import {
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-white/10">
+    <footer className="bg-brand-dark text-white pt-16 pb-8">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-12 mb-12">
           {/* Brand */}
