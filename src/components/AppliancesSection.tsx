@@ -48,7 +48,7 @@ export default function AppliancesSection() {
         </div>
 
         {/* Bracket detail */}
-        <AnimateIn animation="slide-up" delay={100} className="relative mx-auto max-w-4xl bg-white rounded-[32px] p-8 md:p-12 border border-brand-primary/10 shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col items-center group">
+        <AnimateIn animation="slide-up" delay={100} className="relative mx-auto max-w-4xl bg-white rounded-[32px] p-8 md:p-12 border border-brand-primary/10 shadow-brand-lg hover:shadow-brand-xl transition-all duration-300 flex flex-col items-center group">
           <div className="relative h-52 w-52 sm:h-60 sm:w-60 rounded-full bg-white border border-brand-primary/10 shadow-md flex items-center justify-center p-6 mb-6 transition-transform duration-500 group-hover:scale-[1.03]">
             <div className="relative w-full h-full">
               <Image

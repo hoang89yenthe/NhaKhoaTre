@@ -85,7 +85,7 @@ export default function Testimonials() {
           <div className="lg:col-span-6 flex flex-col justify-between space-y-6">
             {reviews.map((rev, idx) => (
               <AnimateIn key={idx} animation="slide-right" delay={100 + idx * 80}>
-                <div className="border border-brand-primary/5 bg-white p-6 rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 relative">
+                <div className="border border-brand-primary/5 bg-white p-6 rounded-3xl shadow-brand hover:shadow-brand-xl transition-all duration-300 relative">
                   <MessageSquareQuote className="absolute right-6 top-6 h-10 w-10 text-brand-primary/5 pointer-events-none" />
                   <div className="flex gap-1 text-brand-accent">
                     {[...Array(rev.rating)].map((_, i) => (

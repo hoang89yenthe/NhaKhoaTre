@@ -292,6 +292,18 @@
   50%       { transform: translateY(0px);   }
 }
 
+@layer utilities {
+  .shadow-brand {
+    box-shadow: 0 4px 24px rgba(8, 75, 43, 0.07);
+  }
+  .shadow-brand-lg {
+    box-shadow: 0 8px 32px rgba(8, 75, 43, 0.10);
+  }
+  .shadow-brand-xl {
+    box-shadow: 0 12px 40px rgba(8, 75, 43, 0.13);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .anim-slide-up, .anim-slide-left, .anim-slide-right, .anim-scale-up {
     animation: none;

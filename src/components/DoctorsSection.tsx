@@ -22,7 +22,7 @@ export default function DoctorsSection() {
           <div className="lg:col-span-6 relative group px-4">
             <div className="absolute inset-0 rounded-3xl bg-brand-accent/15 blur-2xl scale-105 pointer-events-none transition-all group-hover:scale-110 duration-700" />
             <div className="absolute inset-0 translate-x-3 translate-y-3 border border-brand-primary/10 rounded-3xl -z-10 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5 duration-500" />
-            <AnimateIn animation="scale-up" className="relative overflow-hidden border border-brand-primary/10 rounded-3xl shadow-xl">
+            <AnimateIn animation="scale-up" className="relative overflow-hidden border border-brand-primary/10 rounded-3xl shadow-brand-lg">
               <Image
                 src="/images/doctors-team.png"
                 alt="Đội ngũ bác sĩ chuyên môn cao tại Nha Khoa Trẻ"
@@ -56,7 +56,7 @@ export default function DoctorsSection() {
             <div className="space-y-4">
               {doctors.map((doc, idx) => (
                 <AnimateIn key={idx} animation="slide-up" delay={150 + idx * 80}>
-                  <div className="bg-white p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 border-l-[3px] border-brand-accent hover:border-brand-primary pl-6 group">
+                  <div className="bg-white p-5 rounded-2xl shadow-brand hover:shadow-brand-xl transition-all duration-300 border-l-[3px] border-brand-accent hover:border-brand-primary pl-6 group hover:-translate-y-0.5">
                     <span className="text-xs font-semibold text-brand-accent tracking-widest uppercase">
                       0{idx + 1}
                     </span>

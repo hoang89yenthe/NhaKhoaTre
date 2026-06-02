@@ -37,7 +37,7 @@ export default function ProcessSection() {
                       <div className="h-px flex-1 bg-brand-accent/25" />
                     </div>
                     <AnimateIn animation={isEven ? "slide-left" : "slide-right"} delay={80}>
-                      <div className="bg-white p-6 sm:p-8 rounded-3xl border border-brand-primary/5 shadow-md hover:shadow-xl transition-all duration-300">
+                      <div className="bg-white p-6 sm:p-8 rounded-3xl border border-brand-primary/5 shadow-brand hover:shadow-brand-xl hover:-translate-y-1 transition-all duration-300">
                         <h3 className="text-xl font-bold text-brand-primary font-serif leading-snug">
                           {item.title}
                         </h3>
