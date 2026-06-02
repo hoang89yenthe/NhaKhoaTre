@@ -1,34 +1,11 @@
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import AnimateIn from "@/components/AnimateIn";
+import { cases } from "@/lib/content";
 
 export default function CasesSection() {
-  const cases = [
-    {
-      title: "Khi răng con bị hô",
-      desc: "Khi những chiếc răng vĩnh viễn hàm trên mọc lên và chìa ra quá mức so với răng hàm dưới, làm cho tổng thể gương mặt răng bị nhô ra thì cha mẹ nên cho con đi khám với bác sĩ để được chỉnh nha sớm cho bé.",
-      image: "/images/cases/case_ho.png",
-    },
-    {
-      title: "Khi răng con bị móm",
-      desc: "Ngược lại với răng hô, khi những chiếc răng hàm dưới bị chìa ra bên ngoài, khớp cắn không trùng khít với những chiếc răng cửa hàm trên. Lúc này phương pháp chỉnh nha sớm cho con sẽ giúp cho con chỉnh khớp cắn 2 hàng trùng khít, giúp con ăn nhai khỏe và cải thiện thẩm mỹ cho khuôn mặt.",
-      image: "/images/cases/case_mom.png",
-    },
-    {
-      title: "Răng mọc lộn xộn",
-      desc: "Nếu thấy những chiếc răng vĩnh viễn mọc lộn xộn, chiếc thò chiếc ra, chiếc trồi lên, chiếc thụt sâu vào trong thì cha mẹ nên đưa con gặp bác sĩ niềng răng càng sớm càng tốt.",
-      image: "/images/cases/case_lon_xon.png",
-    },
-    {
-      title: "Răng thưa, kẽ răng rộng",
-      desc: "Răng thưa khiến khuôn mặt của bé khi cười mất đi vẻ thẩm mỹ. Bên cạnh đó, còn khiến thức ăn dễ dắt vào kẽ răng gây ra các bệnh lý như sâu răng, viêm nướu. Hãy cho con niềng răng sớm vì điều này không những giúp bé thay đổi về mặt thẩm mỹ mà còn giúp cho khớp cắn đạt chuẩn, hỗ trợ con ăn nhai khỏe, giúp hệ tiêu hóa làm việc ổn định. Đặc biệt còn giúp bé lấy được sự tự tin và dễ dàng nắm bắt những cơ hội mới trong cuộc sống.",
-      image: "/images/cases/case_thua.png",
-    },
-  ];
-
   return (
     <section id="cases" className="bg-white py-16 relative overflow-hidden">
-      {/* Decorative Wave lines */}
       <div className="absolute top-0 right-0 w-[300px] h-[300px] opacity-10 pointer-events-none z-0">
         <svg viewBox="0 0 100 100" className="w-full h-full fill-none stroke-brand-primary stroke-[1.5]">
           <path d="M 0 50 Q 25 25 50 50 T 100 50" />
@@ -36,8 +13,8 @@ export default function CasesSection() {
           <path d="M 0 70 Q 25 45 50 70 T 100 70" />
         </svg>
       </div>
+
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
         <AnimateIn className="text-center max-w-4xl mx-auto mb-16">
           <span className="text-brand-primary-light font-semibold uppercase tracking-widest text-xs sm:text-sm block mb-3 font-sans">
             Chỉ định nha khoa
@@ -50,24 +27,21 @@ export default function CasesSection() {
           </p>
         </AnimateIn>
 
-        {/* 2 Cards Grid */}
         <div className="grid gap-10 sm:grid-cols-2">
           {cases.map((item, idx) => (
             <AnimateIn key={idx} animation="slide-up" delay={idx * 100} className="flex flex-col h-full">
               <Card className="border border-brand-primary/5 bg-white hover:border-brand-primary/15 shadow-md hover:shadow-xl transition-all duration-500 rounded-3xl overflow-hidden group flex flex-col h-full hover:-translate-y-2 py-0 gap-0">
-                {/* Image box */}
                 <div className="relative h-64 w-full overflow-hidden flex items-center justify-center border-b border-brand-primary/5 bg-brand-bg-light/30">
                   <Image
                     src={item.image}
                     alt={item.title}
                     fill
                     className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.06]"
-                    sizes="(max-width: 1280px) 100vw, 250px"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 560px"
                   />
                 </div>
-                {/* Content box */}
                 <CardContent className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-lg font-black text-brand-dark group-hover:text-brand-primary transition-colors font-serif leading-snug">
+                  <h3 className="text-lg font-bold text-brand-dark group-hover:text-brand-primary transition-colors font-serif leading-snug">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm text-gray-500 leading-relaxed flex-grow">
@@ -78,7 +52,6 @@ export default function CasesSection() {
             </AnimateIn>
           ))}
         </div>
-
       </div>
     </section>
   );

@@ -13,6 +13,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { CheckCircle, Loader2, User, Phone as PhoneIcon, MessageSquare, Heart, Sparkles } from "lucide-react";
+import { CLINIC_PHONE_DISPLAY, CLINIC_ADDRESS_SHORT } from "@/lib/content";
 
 const APPS_SCRIPT_URL = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ?? "";
 
@@ -81,9 +82,9 @@ export default function ConsultationForm() {
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white/10 border border-white/20 text-brand-accent">
                     <Sparkles className="h-5 w-5" />
                   </span>
-                  <h2 className="text-3xl sm:text-4xl font-extrabold font-serif tracking-tight text-white leading-tight">
-                    ĐĂNG KÝ HÔM NAY <br />
-                    <span className="text-brand-accent drop-shadow-sm">NHẬN NGAY ƯU ĐÃI</span>
+                  <h2 className="text-3xl sm:text-4xl font-bold font-serif tracking-tight text-white leading-tight">
+                    Đăng ký hôm nay <br />
+                    <span className="text-brand-accent drop-shadow-sm">nhận ngay ưu đãi</span>
                   </h2>
                   <p className="text-base text-green-100/90 leading-relaxed">
                     Đăng ký tư vấn chỉnh nha sớm cho bé để nhận được các đặc quyền duy nhất trong tháng này:
@@ -106,8 +107,8 @@ export default function ConsultationForm() {
                 </div>
 
                 <div className="mt-8 pt-8 border-t border-white/10 text-xs text-green-200/70">
-                  <p>Hotline: 0901.334.334</p>
-                  <p className="mt-1">Địa chỉ: Số 38 Ngụy Như Kon Tum, Thanh Xuân, Hà Nội</p>
+                  <p>Hotline: {CLINIC_PHONE_DISPLAY}</p>
+                  <p className="mt-1">Địa chỉ: {CLINIC_ADDRESS_SHORT}</p>
                 </div>
               </div>
 

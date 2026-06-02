@@ -14,7 +14,7 @@ const playfair = Playfair_Display({
 
 
 
-const BASE_URL = "https://nhakhoatre.vn"; // TODO: cập nhật khi có domain thực tế
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? "https://nhakhoatre.vn";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
